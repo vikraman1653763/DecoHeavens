@@ -2,7 +2,6 @@ import React from "react";
 import { MdAlternateEmail } from "react-icons/md";
 import { IoMdCall } from "react-icons/io";
 import { PiBuildingsFill } from "react-icons/pi";
-import { BorderBeam } from "./ui/BorderBeam";
 
 const ContactInfoSection = () => {
   const contactDetails = [
@@ -33,23 +32,11 @@ const ContactInfoSection = () => {
     <section className="max-w-6xl w-full mx-auto px-6 py-16 text-slate-800">
       
       {/* Tag */}
-      <div>
-
+      
       <span className="px-3 py-1 text-xs border border-slate-300 rounded-full text-slate-600">
         Reach Out To Us
       </span>
-<BorderBeam
-    initialOffset={0}
-    reverse
-    colorFrom="#D9A7FF"
-    colorTo="#FECFEF"
-  />
-  <BorderBeam
-    initialOffset={50}
-    reverse
-    colorFrom="#D9A7FF"
-    colorTo="#FECFEF"
-  />      </div>
+
       {/* Heading */}
       <h1 className="text-4xl font-yatra font-semibold text-left mt-4 text-primary">
         We'd love to hear from you.
