@@ -114,8 +114,9 @@ shadow-[0_6px_24px_rgba(2,6,23,0.01)]
 >
   Contact
 </button>
+)}
 
-          )}
+
 
           {/* Mobile menu toggle */}
           <button

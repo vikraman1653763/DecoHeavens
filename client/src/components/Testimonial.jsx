@@ -78,7 +78,7 @@ const Testimonials = () => {
       {/* ⭐ Velocity Scrolling Cards – ONE ROW */}
       <ScrollVelocityContainer className="w-full py-10">
         <ScrollVelocityRow baseVelocity={3} direction={1}>
-          <div className="flex gap-6  py-2">
+          <div className="flex gap-6 px-3 py-2">
             {dummyTestimonialData.map((t, i) => (
               <TestimonialCard key={i} testimonial={t} />
             ))}

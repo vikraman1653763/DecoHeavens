@@ -7,10 +7,10 @@ const AboutUs = () => {
     <>
       <section className="flex flex-col md:flex-row items-center justify-center gap-10 max-md:px-4">
         {/* Left Image Section */}
-        <div className="relative shadow-2xl shadow-primary/40 rounded-2xl  shrink-0">
+        <div className="relative shadow-2xl shadow-primary/10 rounded-2xl  shrink-0">
           <img
-            className="max-w-md w-full object-cover rounded-2xl"
-            src="https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?q=80&w=451&h=451&auto=format&fit=crop"
+            className="max-w-md w-full h-130 object-contain rounded-2xl"
+            src="/assets/wa6.webp"
             alt="Deco Heavens"
           />
 
