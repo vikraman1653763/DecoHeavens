@@ -45,7 +45,8 @@ const Services = () => {
   ];
 
   return (
-    <section className="max-w-6xl mx-auto py-20 px-4 sm:px-4">
+    
+    <section className="max-w-6xl mx-auto py-20 px-4 sm:px-4 ">
       <h2 className="text-3xl md:text-4xl  text-primary text-center mb-3 font-yatra">
         Our Services
       </h2>
