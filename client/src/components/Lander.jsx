@@ -24,35 +24,34 @@ const Lander = () => {
 
         {/* Left Text Content */}
         <div className="space-y-6 max-w-xl relative z-10">
+  
+
           <h1 className="font-yatra text-4xl md:text-6xl font-medium tracking-widest  leading-tight text-primary">
-            <span> <SparklesText className='inline-block'>Celebrate</SparklesText> Love.</span>
+             <SparklesText className='inline-block font-yatra'>Celebrate</SparklesText> Love.
             <br />
-            Design <SparklesText className='inline-block'>Living</SparklesText>.
+            Design <SparklesText className='inline-block font-yatra'>Living</SparklesText>.
             <br />
-           <SparklesText className='inline-block'> Paint</SparklesText> Stories.
+           <SparklesText className='inline-block font-yatra'> Paint</SparklesText> Stories.
           </h1>
 
-          <p className="text-base text-slate-600 leading-relaxed font-poppins">
-            At Deco Heavens, we transform your special moments and spaces into
-            unforgettable experiences. Whether you're planning a magical
-            wedding, designing your dream home, or looking to elevate your walls
-            with stunning art, we bring passion, precision, and creativity to
-            every detail.
-          </p>
+          
 
           <p className="text-base text-slate-600 leading-relaxed font-poppins">
             From elegant event planning to personalized interior styling and
             soulful mural artistry — we blend tradition with trend to reflect
             your unique story.
           </p>
+<div className="  flex items-center justify-center flex-col">
 
-<p className="font-yatra text-sm text-secondary  backdrop-blur-md border border-white/10 rounded-4xl text-center p-1">
+<p className="font-dance text-xl text-secondary  backdrop-blur-mdrounded-4xl text-center p-1">
   Let us bring your vision to life with timeless beauty and unmatched craftsmanship.
 </p>
+<div className=" w-full flex items-center justify-center h-20 relative">
+<img src="/assets/Spirals.svg" className=" object-contain  w-30 absolute"/>
+</div>
 
 
-
-
+</div>
         </div>
 
         {/* Right: Image Grid */}

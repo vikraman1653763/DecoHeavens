@@ -89,7 +89,7 @@ export const SparklesText = ({
         {sparkles.map((sparkle) => (
           <Sparkle key={sparkle.id} {...sparkle} />
         ))}
-        <p>{children}</p>
+        <p className="font-yatra">{children}</p>
       </span>
     </div>
   );

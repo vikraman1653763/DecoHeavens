@@ -4,12 +4,14 @@ import Testimonial from '../components/Testimonial'
 import CallToAction from '@/components/CallToAction'
 import WhyChooseDecoHeavens from '@/components/WhyChooseDecoHeavens'
 import Services from '@/components/Services'
+import AboutUs from '@/components/AboutUs'
 
 const Home = () => {
   return (
     <div className=''>
 
     <Lander/>
+    <AboutUs/>
     <Services/>
     <WhyChooseDecoHeavens/>
     <Testimonial/>

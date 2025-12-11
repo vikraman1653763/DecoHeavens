@@ -1,6 +1,7 @@
 import React from "react";
 import { BorderBeam } from "./ui/BorderBeam";
 import { motion } from "framer-motion";
+import { AnimatedGradientText } from "./ui/animated-gradient-text";
 
 const WhyChooseDecoHeavens = () => {
   const features = [
@@ -67,7 +68,15 @@ const WhyChooseDecoHeavens = () => {
         {/* Right Section */}
         <div>
           <h2 className="font-yatra text-3xl md:text-4xl text-primary leading-snug">
-            Why Choose <span className="text-secondary">Deco Heavens?</span>
+            Why Choose 
+            <AnimatedGradientText
+              speed={1}
+              colorFrom="#f9a8d4"  
+              colorTo="#9db7a4"     
+              className="text-4xl font-semibold tracking-tight font-dance "
+            >
+              Deco Heavens?
+            </AnimatedGradientText>
           </h2>
           <p className="text-slate-600 mt-3 max-w-full">
             Because your story deserves more than generic decor. We blend
