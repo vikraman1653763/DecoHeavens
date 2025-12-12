@@ -3,8 +3,8 @@ import Lander from '../components/Lander'
 import Testimonial from '../components/Testimonial'
 import CallToAction from '@/components/CallToAction'
 import WhyChooseDecoHeavens from '@/components/WhyChooseDecoHeavens'
-import Services from '@/components/Services'
 import AboutUs from '@/components/AboutUs'
+import WhatWeDoPillars from '@/components/WhatWeDoPillars'
 
 const Home = () => {
   return (
@@ -12,7 +12,7 @@ const Home = () => {
 
     <Lander/>
     <AboutUs/>
-    <Services/>
+    <WhatWeDoPillars/>
     <WhyChooseDecoHeavens/>
     <Testimonial/>
     <CallToAction/>

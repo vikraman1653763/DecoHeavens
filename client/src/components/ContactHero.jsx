@@ -68,8 +68,8 @@ const ContactHero = () => {
           "
         >
           Let’s bring your{" "}
-          <span className="text-primary">vision to life</span> with
-          <span className="text-secondary"> Deco Heavens</span>.
+          <span className="text-primary font-dance">vision to life</span> with
+          <span className="text-secondary font-yatra"> Deco Heavens</span>.
         </h1>
 
         {/* Subheading */}

@@ -12,8 +12,19 @@ const ContactForm = () => {
       id="form"
       onSubmit={handleSubmit}
       className="flex flex-col items-center text-sm px-4 pb-16 bg-linear-to-b 
-        from-[#e6f0ec] via-[#fffbee] to-[#fff7f3]"
+        from-[#e6f0ec] via-[#fffbee] to-[#fff7f3] relative"
     >
+      <img
+            src="/assets/spiral2.svg"
+            alt="spiral background"
+            className="
+          absolute left-1/2 top-1/2 
+          -translate-x-1/2 -translate-y-1/2
+          w-[500px] md:w-[650px] opacity-15
+          pointer-events-none select-none
+          animate-slow-spin
+        "
+          />
       <p className="text-xs tracking-[0.2em] uppercase text-secondary pb-2">
         Contact Us
       </p>
@@ -118,7 +129,10 @@ const ContactForm = () => {
           active:scale-95 
           hover:bg-primary/90
           transition
+          z-1
         "
+         data-aos="slide-up"
+      data-aos-delay={30}
       >
         Send Message
       </button>
