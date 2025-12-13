@@ -1,0 +1,34 @@
+/* Wheel rotates */
+.int-design-images {
+  --rotate: 0deg;     /* set from React */
+  --step: 60deg;      /* set from React */
+  --radius: 220px;    /* adjust this to match your ring */
+
+  transform: translate(0%, 0%) rotate(var(--rotate));
+  transition: transform 0.5s ease-in-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1100px;
+  height: 1100px;
+  border-radius: 9999px;
+}
+
+/* Place each item around the circle */
+.int-design-image-item {
+  --item-rot: calc(var(--step) * var(--i));
+  
+  position: absolute;
+  inset: 0;
+  
+  /* ✅ rotate to angle, then push outward */
+  transform: rotate(var(--item-rot)) translateY(calc(-1 * var(--radius)));
+  transform-origin: center;
+}
+
+/* ✅ counter-rotate so every image stays upright */
+.int-design-image-inner {  
+  transform: rotate(calc(-1 * (var(--item-rot) + var(--rotate))));
+  transform-origin: center;
+  display: inline-block;
+}

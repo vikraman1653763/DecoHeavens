@@ -15,8 +15,8 @@ const Navbar = () => {
 
   const navItems = [
     { label: "Home", path: "/" },
-    { label: "Events & Weddings", path: "/events" },
-    { label: "Interior Design", path: "/interior" },
+    { label: "Events & Weddings", path: "/events-and-weddings" },
+    { label: "Interior Design", path: "/interior-design" },
     { label: "Wall Art", path: "/wall-art" },
     { label: "About Us", path: "/about" },
     { label: "Contact", path: "/contact" }, // only used for mobile menu
@@ -39,7 +39,7 @@ const Navbar = () => {
   return (
     <div className="fixed w-full z-50 flex justify-center items-center transition-all duration-500">
       <header
-        className={`flex items-center justify-between backdrop-blur-xl transition-all duration-500
+        className={`flex items-center justify-between backdrop-blur-xl transition-all duration-500 
 ${
   scrolled
     ? `
@@ -51,7 +51,7 @@ ${isSmall && menuOpen ? "rounded-b-none" : ""}
 `
     : `
 sm:translate-y-0 px-7 sm:px-10 py-4 max-w-full w-full
-bg-white/50 text-slate-800 border border-white/30
+bg-white text-slate-800 border border-white/30
 shadow-[0_6px_24px_rgba(2,6,23,0.01)]
 `
 }`}
