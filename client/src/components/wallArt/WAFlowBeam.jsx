@@ -7,6 +7,8 @@ import { PiPaintBrushBroadFill } from "react-icons/pi";
 import { BsFillPatchCheckFill } from "react-icons/bs";
 import { AnimatedBeam } from "../ui/animated-beam";
 import { HiWrenchScrewdriver } from "react-icons/hi2";
+import { FaRegHandshake } from "react-icons/fa6";
+
 /* ---------- Circle ---------- */
 const Circle = forwardRef(({ className, children }, ref) => {
   return (
@@ -57,12 +59,12 @@ const WallArtFlowBeam = () => {
 
           {/* Create */}
           <Circle ref={createRef}>
-            <PiPaintBrushBroadFill className="text-4xl text-[#3FA9F5]" />
+            <FaRegHandshake className="text-4xl text-[#3FA9F5]" />
           </Circle>
 
           {/* Refine */}
           <Circle ref={refineRef}>
-            <HiWrenchScrewdriver  className="text-4xl text-[#F4C430]" />
+            <PiPaintBrushBroadFill  className="text-4xl text-[#F4C430]" />
           </Circle>
 
           {/* Deliver */}
@@ -77,10 +79,10 @@ const WallArtFlowBeam = () => {
           fromRef={conceptRef}
           toRef={createRef}
           duration={2.6}
-          pathColor="#3FA9F5"
+          pathColor="#e2e8f0"
           pathOpacity={0.35}
-          gradientStartColor="#FF8A3D"
-          gradientStopColor="#3FA9F5"
+          gradientStartColor="#3FA9F5"
+          gradientStopColor="#FF8A3D"
           pathWidth={2.4}
           curvature={40}
         />
@@ -92,10 +94,10 @@ const WallArtFlowBeam = () => {
           toRef={refineRef}
           duration={2.6}
           delay={0.2}
-          pathColor="#F4C430"
+          pathColor="#e2e8f0 "
           pathOpacity={0.35}
-          gradientStartColor="#2ECC71"
-          gradientStopColor="#F4C430"
+          gradientStartColor="#F4C430"
+          gradientStopColor="#3FA9F5"
           pathWidth={2.4}
           curvature={-40}
           />
@@ -107,10 +109,10 @@ const WallArtFlowBeam = () => {
           toRef={deliverRef}
           duration={2.6}
           delay={0.4}
-          pathColor="#2ECC71"
+          pathColor="#e2e8f0 "
           pathOpacity={0.35}
-          gradientStartColor="#3FA9F5"
-          gradientStopColor="#2ECC71"
+          gradientStartColor="#2ECC71"
+          gradientStopColor="#F4C430"
           pathWidth={2.4}
           curvature={40}
         />

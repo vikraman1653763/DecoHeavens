@@ -2,12 +2,12 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import WallArtFlowBeam from "./WallArtFlowBeam"; // ✅ adjust path if needed
+import WallArtFlowBeam from "./WAFlowBeam"; // ✅ adjust path if needed
 import { AnimatedGradientText } from "../ui/animated-gradient-text";
 
 const WallArtIntroSection = () => {
   return (
-    <section className="w-full bg-secondary/10 py-12 sm:py-16">
+    <section className="w-full  py-12 sm:py-16">
       <div className="mx-auto max-w-6xl px-4">
         <div className="mx-auto max-w-3xl text-center">
           <motion.p

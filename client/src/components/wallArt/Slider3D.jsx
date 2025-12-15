@@ -141,10 +141,10 @@ const slides = useMemo(
       <div className="max-w-6xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-10">
-          <p className="font-dance text-xl sm:text-2xl text-primary/90">
+          <p className="font-dance text-xl sm:text-2xl text-secondary">
             Explore our styles. Pick what fits your walls.
           </p>
-          <h2 className="font-yatra text-3xl sm:text-4xl text-neutral-900 mt-2">
+          <h2 className="font-yatra text-3xl sm:text-4xl text-primary mt-2">
             Our Wall Art Categories
           </h2>
           <p className="font-poppins text-sm sm:text-base text-neutral-600 mt-2">

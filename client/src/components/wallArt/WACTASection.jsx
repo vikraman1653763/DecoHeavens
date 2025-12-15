@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const WallArtCTASection = () => {
+    const navigate = useNavigate();
+
   return (
     <section className="w-full mt-12">
       <div className="max-w-7xl mx-auto px-4">
@@ -13,8 +16,8 @@ const WallArtCTASection = () => {
                 Let your walls speak
               </p>
 
-              <h2 className="mt-2 font-yatra sm:text-4xl text-2xl text-white leading-tight">
-                Transform Your Space with
+              <h2 className="mt-2 sm:text-4xl text-2xl text-white leading-tight">
+                Transform Your <span className="font-yatra ">Space</span> with
                 <span className="text-primary"> Custom Wall Art</span>
               </h2>
 
@@ -30,6 +33,7 @@ const WallArtCTASection = () => {
               </p>
 
               <button
+                    onClick={() => navigate("/contact")}
                 type="button"
                 className="px-7 py-3 mt-8 rounded-md text-sm font-poppins font-semibold
                            text-white tracking-wide bg-primary hover:bg-primary/90
