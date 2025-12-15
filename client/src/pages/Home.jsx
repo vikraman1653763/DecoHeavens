@@ -5,7 +5,7 @@ import CallToAction from '@/components/CallToAction'
 import WhyChooseDecoHeavens from '@/components/WhyChooseDecoHeavens'
 import AboutUs from '@/components/AboutUs'
 import WhatWeDoPillars from '@/components/WhatWeDoPillars'
-
+ 
 const Home = () => {
   return (
     <div className=''>

@@ -49,7 +49,7 @@ const WhatWeDoPillars = () => {
         {pillars.map((item, i) => (
           <div
             key={i}
-            className="relative group flex-grow transition-all w-56 h-[420px] duration-500 hover:w-full rounded-3xl overflow-hidden"
+            className="relative group grow transition-all w-56 h-[420px] duration-500 hover:w-full rounded-3xl overflow-hidden"
           >
             <img
               className={`h-full w-full object-cover ${item.pos}`}
