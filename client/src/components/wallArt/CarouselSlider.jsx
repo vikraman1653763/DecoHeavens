@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./css/CarouselSlider.css";
+import "@/components/css/CarouselSlider.css";
 import { ArrowLeft3, ArrowRight3 } from "iconsax-reactjs";
 
 const CarouselSlider = () => {
@@ -8,46 +8,43 @@ const CarouselSlider = () => {
   // Track which URLs are allowed to load (lazy)
   const [loadedMap, setLoadedMap] = useState({});
 
-const slides = [
-  {
-    bg: "https://plus.unsplash.com/premium_photo-1706375750361-0760b9a10b05?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    name: "Modern Serenity",
-    des: "A contemporary wall art design that brings calm, balance, and visual depth to modern living spaces, creating an atmosphere of quiet sophistication.",
-  },
-  {
-    bg: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    name: "Nature’s Canvas",
-    des: "Inspired by organic landscapes, this wall art adds warmth and natural flow to interiors, making it ideal for feature walls and calm environments.",
-  },
-  {
-    bg: "https://images.unsplash.com/photo-1589669525478-0090c61760e7?q=80&w=1410&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    name: "Minimal Horizon",
-    des: "A minimalist wall art composition designed for modern homes and workspaces, offering clean lines, subtle tones, and timeless appeal.",
-  },
-  {
-    bg: "https://plus.unsplash.com/premium_photo-1705835519832-a2cff501427e?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    name: "Abstract Harmony",
-    des: "A premium abstract wall art piece crafted to make a bold visual statement while maintaining artistic balance and modern elegance.",
-  },
-  {
-    bg: "/assets/wa11.webp",
-    name: "Timeless Texture",
-    des: "Textured wall art that blends classic inspiration with modern design sensibilities, adding depth and character to refined interiors.",
-  },
-  {
-    bg: "/assets/wa7.webp",
-    name: "Urban Elegance",
-    des: "A sophisticated wall art selection curated for contemporary urban spaces, enhancing apartments and studios with subtle luxury.",
-  },
-  {
-    bg: "/assets/wa2.webp",
-    name: "Artistic Expression",
-    des: "Expressive forms and rich tones come together in this modern wall art, designed to elevate spaces with creative personality.",
-  },
-];
-
-
-
+  const slides = [
+    {
+      bg: "https://plus.unsplash.com/premium_photo-1706375750361-0760b9a10b05?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      name: "Modern Serenity",
+      des: "A contemporary wall art design that brings calm, balance, and visual depth to modern living spaces, creating an atmosphere of quiet sophistication.",
+    },
+    {
+      bg: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      name: "Nature’s Canvas",
+      des: "Inspired by organic landscapes, this wall art adds warmth and natural flow to interiors, making it ideal for feature walls and calm environments.",
+    },
+    {
+      bg: "https://images.unsplash.com/photo-1589669525478-0090c61760e7?q=80&w=1410&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      name: "Minimal Horizon",
+      des: "A minimalist wall art composition designed for modern homes and workspaces, offering clean lines, subtle tones, and timeless appeal.",
+    },
+    {
+      bg: "https://plus.unsplash.com/premium_photo-1705835519832-a2cff501427e?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      name: "Abstract Harmony",
+      des: "A premium abstract wall art piece crafted to make a bold visual statement while maintaining artistic balance and modern elegance.",
+    },
+    {
+      bg: "/assets/wa11.webp",
+      name: "Timeless Texture",
+      des: "Textured wall art that blends classic inspiration with modern design sensibilities, adding depth and character to refined interiors.",
+    },
+    {
+      bg: "/assets/wa7.webp",
+      name: "Urban Elegance",
+      des: "A sophisticated wall art selection curated for contemporary urban spaces, enhancing apartments and studios with subtle luxury.",
+    },
+    {
+      bg: "/assets/wa2.webp",
+      name: "Artistic Expression",
+      des: "Expressive forms and rich tones come together in this modern wall art, designed to elevate spaces with creative personality.",
+    },
+  ];
 
   // ✅ Preload the first 2 slides immediately (so hero looks perfect)
   useEffect(() => {
@@ -184,7 +181,7 @@ const slides = [
                     absolute inset-0 rounded-[inherit]
                     ${isLoaded ? "opacity-0" : "opacity-100"}
                     transition-opacity duration-500
-                    bg-gradient-to-br from-gray-200/40 to-gray-400/20
+                    bg-linear-to-br from-gray-200/40 to-gray-400/20
                   `}
                 />
 
@@ -210,16 +207,16 @@ const slides = [
                     w-[500px] text-left
                     text-white
                     hidden
-                    z-[5]
+                    z-5
                     
                   "
                 >
-                    
                   <div className="wall-art-name text-6xl text-primary font-bold opacity-0 font-dance">
                     {s.name}
                   </div>
                   <div className="wall-art-des my-5 opacity-0 text-slate-700">
-                    {s.des}</div>
+                    {s.des}
+                  </div>
                   <button
                     type="button"
                     className="wall-art-btn px-5 py-2 border-0 opacity-0 bg-primary text-white rounded-md"
@@ -232,7 +229,7 @@ const slides = [
           })}
         </div>
 
-        <div className="wall-art-buttons absolute bottom-[30px] left-0 w-full text-center z-[10]">
+        <div className="wall-art-buttons absolute bottom-[30px] left-0 w-full text-center z-10">
           <div className="flex items-center justify-center gap-4">
             <button
               type="button"

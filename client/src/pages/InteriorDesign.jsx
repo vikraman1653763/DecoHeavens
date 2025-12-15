@@ -1,4 +1,4 @@
-import InteriorDesignCarousel from '@/components/InteriorDesignCarousel'
+import InteriorDesignCarousel from '@/components/interiorDesign/InteriorDesignCarousel'
 import React from 'react'
 
 const InteriorDesign = () => {

@@ -1,4 +1,4 @@
-import EventImageSlider from '@/components/EventWeddingSlider'
+import EventImageSlider from '@/components/eventsPlannings/EventWeddingSlider'
 import React from 'react'
 
 const EventsAndWeddings = () => {

@@ -1,7 +1,7 @@
 import React from "react";
-import { BorderBeam } from "./ui/BorderBeam";
+import { BorderBeam } from "../ui/BorderBeam";
 import { motion } from "framer-motion";
-import { AnimatedGradientText } from "./ui/animated-gradient-text";
+import { AnimatedGradientText } from "../ui/animated-gradient-text";
 
 const WhyChooseDecoHeavens = () => {
   const features = [

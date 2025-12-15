@@ -1,5 +1,5 @@
 import React from "react";
-import { AnimatedGradientText } from "./ui/animated-gradient-text";
+import { AnimatedGradientText } from "../ui/animated-gradient-text";
 
 const VisionMissionSection = () => {
   return (

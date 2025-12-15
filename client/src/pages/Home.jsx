@@ -1,10 +1,10 @@
 import React from 'react'
-import Lander from '../components/Lander'
-import Testimonial from '../components/Testimonial'
-import CallToAction from '@/components/CallToAction'
-import WhyChooseDecoHeavens from '@/components/WhyChooseDecoHeavens'
-import AboutUs from '@/components/AboutUs'
-import WhatWeDoPillars from '@/components/WhatWeDoPillars'
+import Lander from '../components/home/Lander'
+import Testimonial from '../components/home/Testimonial'
+import CallToAction from '@/components/home/CallToAction'
+import WhyChooseDecoHeavens from '@/components/home/WhyChooseDecoHeavens'
+import AboutUs from '@/components/home/AboutUs'
+import WhatWeDoPillars from '@/components/home/WhatWeDoPillars'
  
 const Home = () => {
   return (

@@ -1,7 +1,7 @@
-import ContactForm from '@/components/ContactForm'
-import ContactHero from '@/components/ContactHero'
-import ContactInfoSection from '@/components/ContactInfoSection'
-import ContactMapSection from '@/components/ContactMapSection'
+import ContactForm from '@/components/contact/ContactForm'
+import ContactHero from '@/components/contact/ContactHero'
+import ContactInfoSection from '@/components/contact/ContactInfoSection'
+import ContactMapSection from '@/components/contact/ContactMapSection'
 import React from 'react'
 
 const Contact = () => {

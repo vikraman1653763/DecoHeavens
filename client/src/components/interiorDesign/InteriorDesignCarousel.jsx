@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./css/InteriorDesignCarousel.css";
+import "@/components/css/InteriorDesignCarousel.css";
 import { AnimatePresence, motion } from "framer-motion";
-import { LineShadowText } from "./ui/line-shadow-text";
+import { LineShadowText } from "../ui/line-shadow-text";
 
 const InteriorDesignCarousel = () => {
   const imageRef = useRef(null);

@@ -37,7 +37,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed w-full z-50 flex justify-center items-center transition-all duration-500">
+    <div className="fixed w-full z-100 flex justify-center items-center transition-all duration-500">
       <header
         className={`flex items-center justify-between backdrop-blur-xl transition-all duration-500 
 ${
