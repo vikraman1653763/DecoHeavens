@@ -106,8 +106,8 @@ const ServicesSection = () => {
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center rounded-full px-6 py-3 text-sm font-semibold
-                         bg-[color:var(--color-secondary)] text-white
-                         shadow-lg shadow-[color:var(--color-secondary)]/25"
+                         bg-secondary text-white
+                         shadow-lg shadow-secondary/25"
             >
               Get a Free Quote <span className="ml-2">→</span>
             </motion.button>
@@ -132,14 +132,14 @@ const ServicesSection = () => {
                 className="text-left w-full h-full rounded-2xl border border-black/5
                            bg-white/80 backdrop-blur
                            shadow-md hover:shadow-xl transition-shadow duration-300
-                           focus:outline-none focus:ring-2 focus:ring-[color:var(--color-secondary)]/40"
+                           focus:outline-none focus:ring-2 focus:ring-secondary/40"
               >
                 <div className="p-6 flex flex-col h-full">
                   {/* Icon + Title */}
                   <div className="flex items-center gap-4 mb-4">
                     <div
                       className="w-12 h-12 rounded-2xl grid place-items-center text-xl
-                                 bg-[color:var(--color-secondary)]/10
+                                 bg-secondary/10
                                  border border-secondary/20"
                     >
                       {service.icon}

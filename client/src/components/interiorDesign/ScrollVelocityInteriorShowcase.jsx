@@ -36,7 +36,7 @@ const ScrollVelocityInteriorShowcase = () => {
       >
         <ScrollVelocityContainer className="w-full">
           {/* Row A (pause on hover) */}
-          <div className={paused ? "[&_*]:!animate-none" : ""}>
+          <div className={paused ? "**:animate-none!" : ""}>
             <ScrollVelocityRow baseVelocity={5} direction={1} className="py-4">
               {IMAGES_ROW_A.map((src, idx) => (
                 <img
@@ -61,7 +61,7 @@ const ScrollVelocityInteriorShowcase = () => {
           </div>
 
           {/* Row B (pause on hover) */}
-          <div className={paused ? "[&_*]:!animate-none" : ""}>
+          <div className={paused ? "**:animate-none!" : ""}>
             <ScrollVelocityRow baseVelocity={6} direction={-1}  className="py-4">
               {IMAGES_ROW_B.map((src, idx) => (
                 <img
