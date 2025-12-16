@@ -176,12 +176,13 @@ const InteriorDesignCarousel = () => {
         className="
           int-design-images
           absolute top-1/2 left-1/2
-          -translate-x-1/2 
+          -translate-x-1/2 -translate-y-10
           w-[1100px] h-[1100px] md:w-[1500px] md:h-[100px]
           rounded-full
           outline-[3px] outline-dashed outline-white/20
           outline-offset-[-90px] md:outline-offset-0
-        "
+          
+        " 
       >
         {slides.map((s, i) => (
           <div

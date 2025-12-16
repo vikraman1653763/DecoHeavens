@@ -40,7 +40,7 @@ const WallArtFlowBeam = () => {
     <div className="mt-8 flex flex-col items-center justify-center">
       {/* Labels */}
       <div className="flex w-full max-w-[620px]  justify-between px-1 text-xl text-neutral-700 ">
-        <span className="w-12 text-center font-dance text-[#FF8A3D]">Concept</span>
+        <span className="w-12 text-center font-dance text-[#ff6b35]">Concept</span>
         <span className="w-12 text-center font-dance text-[#3FA9F5]">Create</span>
         <span className="w-12 text-center font-dance text-[#F4C430]">Refine</span>
         <span className="w-12 text-center font-dance text-[#2ECC71]">Deliver</span>
@@ -54,7 +54,7 @@ const WallArtFlowBeam = () => {
         <div className="flex w-full justify-between ">
           {/* Concept */}
           <Circle ref={conceptRef}>
-            <HiOutlineSparkles className="text-4xl text-[#FF8A3D]" />
+            <HiOutlineSparkles className="text-4xl text-[#ff6b35]" />
           </Circle>
 
           {/* Create */}

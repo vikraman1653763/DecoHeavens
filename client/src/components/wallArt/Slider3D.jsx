@@ -24,6 +24,12 @@ const slides = useMemo(
       tag: "3D Panels • Textures • Accent Walls",
     },
     {
+      title: "Traditional Wall Art",
+      desc: "Elegant traditional designs for pooja rooms and heritage spaces — detailed patterns with warm, timeless character.",
+      img: "https://plus.unsplash.com/premium_photo-1694475155167-4d3b05c8dee3?q=80&w=684&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      tag: "Traditional • Symmetry • Premium Finish",
+    },
+    {
       title: "Wallpaper Designs",
       desc: "Premium wallpaper styles with clean alignment and smooth finishing — designed to blend beautifully with your space.",
       img: "https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&w=1200&q=70",
@@ -40,12 +46,6 @@ const slides = useMemo(
       desc: "Playful, safe, and durable themes for children’s rooms — characters, cartoons, and pastel worlds that grow with them.",
       img: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=70",
       tag: "Kids Themes • Pastels • Safe Paints",
-    },
-    {
-      title: "Traditional Wall Art",
-      desc: "Elegant traditional designs for pooja rooms and heritage spaces — detailed patterns with warm, timeless character.",
-      img: "https://plus.unsplash.com/premium_photo-1694475155167-4d3b05c8dee3?q=80&w=684&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      tag: "Traditional • Symmetry • Premium Finish",
     },
   ],
   []
@@ -137,7 +137,27 @@ const slides = useMemo(
   };
 
   return (
-    <section className="w-full py-16 sm:py-20 bg-white">
+    <section className="w-full py-16 sm:py-20 bg-white relative">
+        <img
+        src="/assets/mandala.svg"
+        alt="Mandala Decorative"
+        className="
+        absolute left-1/2 md:left-0 top-1/2
+        -translate-x-1/2 -translate-y-1/2
+        w-72 sm:w-160 
+        pointer-events-none animate-slow-spin
+        "
+      />
+        <img
+        src="/assets/mandala.svg"
+        alt="Mandala Decorative"
+        className="
+        absolute right-1/2 md:right-0 top-1/2
+        translate-x-1/2 -translate-y-1/2
+        w-72 sm:w-160 
+        pointer-events-none animate-rev-slow-spin 
+        "
+      />
       <div className="max-w-6xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-10">
