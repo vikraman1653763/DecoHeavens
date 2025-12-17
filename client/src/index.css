@@ -202,3 +202,25 @@
 .animate-rev-slow-spin {
   animation: rev-slow-spin 40s linear infinite;
 }
+
+/* ////////////////////////////////////interior design modal image slider   */
+
+
+/* Hide all slides by default */
+.swiper-slide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Show only prev, active, next */
+.swiper-slide-active,
+.swiper-slide-prev,
+.swiper-slide-next {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Optional smooth transition */
+.swiper-slide {
+  transition: opacity 0.3s ease;
+}

@@ -10,10 +10,10 @@ const InteriorDesign = () => {
   return (
     <div>
       <InteriorDesignCarousel/>
+      <InteriorGallery/>
       <InteriorIntro/>
       <ScrollVelocityInteriorShowcase/>
       <InteriorProcess/>
-      <InteriorGallery/>
       <InteriorCTA/>
     </div>
   )
