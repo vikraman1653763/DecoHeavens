@@ -9,34 +9,34 @@ const InteriorDesignCarousel = () => {
 
   const slides = [
     {
-      img: "/assets/id1.webp",
+      img: "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=500&q=80",
       title: "Modern Living",
       des: "Elegant interior styling crafted to enhance modern living spaces with warmth and balance.",
     },
     {
-      img: "/assets/id2.webp",
-      title: "Luxury Comfort",
-      des: "Premium interior concepts blending comfort, sophistication, and timeless design.",
+      img: "https://cdn.pixabay.com/photo/2016/12/30/07/59/kitchen-1940174_1280.jpg",
+      title: "Biophilic Office Design",
+      des: "Modern office interiors integrating natural elements and greenery to enhance focus, wellness, and productivity.",
     },
     {
-      img: "/assets/id3.webp",
-      title: "Minimal Spaces",
-      des: "Clean lines and neutral tones designed for calm, clutter-free interiors.",
+      img: "https://images.unsplash.com/photo-1706074740295-d7a79c079562?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0",
+      title: "Reception Lounge",
+      des: "Modern reception and waiting spaces crafted for comfort, elegance, and a professional ambience.",
     },
     {
-      img: "/assets/id4.webp",
-      title: "Artistic Homes",
-      des: "Creative textures and colors that transform homes into artistic statements.",
+      img: "https://images.unsplash.com/photo-1706074797611-a02f9ed06439?q=80&w=1156&auto=format&fit=crop&ixlib=rb-4.1.0",
+      title: "Executive Meeting Room",
+      des: "Sleek conference rooms crafted for productive discussions in a modern corporate environment.",
     },
     {
-      img: "/assets/id5.webp",
+      img: "https://images.unsplash.com/photo-1667646590380-670b53b8c393?q=80&w=933&auto=format&fit=crop&ixlib=rb-4.1.0",
       title: "Urban Style",
       des: "Contemporary designs curated for stylish city living environments.",
     },
     {
-      img: "/assets/id6.webp",
-      title: "Timeless Design",
-      des: "Interior solutions that remain elegant across evolving trends.",
+      img: "https://images.unsplash.com/photo-1600493504483-8df7098b5792?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0",
+      title: "Timeless Comfort",
+      des: "Interior inspirations blending timeless elegance with modern flair.",
     },
   ];
 
@@ -101,11 +101,11 @@ const InteriorDesignCarousel = () => {
   };
 
   const titleWrap = {
-    hidden: { opacity: 0, y: -50,rotateZ:10 },
+    hidden: { opacity: 0, y: -50, rotateZ: 10 },
     show: {
       opacity: 1,
       y: 0,
-      rotateZ:0,
+      rotateZ: 0,
       transition: { duration: 0.8, ease: "easeOut" },
     },
   };
@@ -171,7 +171,6 @@ const InteriorDesignCarousel = () => {
 
       {/* Wheel */}
       <motion.div
-      
         ref={imageRef}
         className="
           int-design-images
@@ -182,7 +181,7 @@ const InteriorDesignCarousel = () => {
           outline-[3px] outline-dashed outline-white/20
           outline-offset-[-90px] md:outline-offset-0
           
-        " 
+        "
       >
         {slides.map((s, i) => (
           <div
@@ -191,12 +190,14 @@ const InteriorDesignCarousel = () => {
             style={{ "--i": i + 1 }}
           >
             <div className="int-design-image-inner">
-              <img
-                src={s.img}
-                alt={s.title}
-                className="h-80 md:h-[400px] rounded-4xl shadow-[18px_0_40px_rgba(0,0,0,0.35)]"
-                draggable="false"
-              />
+              <div className="w-[320px] h-[320px] md:w-[400px] md:h-[400px] overflow-hidden rounded-4xl shadow-[18px_0_40px_rgba(0,0,0,0.35)]">
+                <img
+                  src={s.img}
+                  alt={s.title}
+                  className="w-full h-full object-cover"
+                  draggable="false"
+                />
+              </div>
             </div>
           </div>
         ))}
