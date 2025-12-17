@@ -190,6 +190,7 @@ const InteriorDesignCarousel = () => {
             style={{ "--i": i + 1 }}
           >
             <div className="int-design-image-inner">
+              
               <div className="w-[320px] h-80 md:w-[400px] md:h-[400px] overflow-hidden rounded-4xl shadow-[18px_0_40px_rgba(0,0,0,0.35)]">
                 <img
                   src={s.img}
