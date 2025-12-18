@@ -133,11 +133,11 @@ export default function WallArtProcessTimeline() {
                       <Box
                         sx={{
                           display: "flex",
-                          height:210,
+                          height: 210,
                           flexDirection: { xs: "column", sm: "row" },
                           backgroundColor: "#ffffff6e",
                           maxWidth: 520,
-                        }} 
+                        }}
                       >
                         {/* ✅ Image column now stretches to full card height */}
                         <Box
@@ -154,7 +154,7 @@ export default function WallArtProcessTimeline() {
                             loading="lazy"
                             sx={{
                               width: "100%",
-                              height: "100%", 
+                              height: "100%",
                               objectFit: "cover",
                               display: "block",
                             }}
