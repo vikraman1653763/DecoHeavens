@@ -12,23 +12,18 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 
-
 const App = () => {
-  
   useEffect(() => {
     AOS.init({
       duration: 800,
       easing: "ease-out-cubic",
-     
     });
   }, []);
- 
 
   return (
     <div>
-
       <Navbar />
-     
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
@@ -37,10 +32,9 @@ const App = () => {
         <Route path="/events-and-weddings" element={<EventsAndWeddings />} />
         <Route path="/interior-design" element={<InteriorDesign />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </div>
   );
 };
 
 export default App;
-
