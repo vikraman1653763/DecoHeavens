@@ -1,5 +1,3 @@
-/* CarouselSlider.css */
-
 /* Full-screen stage */
 .wall-stage {
   position: relative;
@@ -54,7 +52,8 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.45),
+  box-shadow:
+    inset 0 0 0 2px rgba(255, 255, 255, 0.45),
     inset 0 0 0 10px rgba(0, 0, 0, 0.1);
   pointer-events: none;
 }
@@ -63,17 +62,24 @@
 .thumb-skeleton {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.06));
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.25),
+    rgba(0, 0, 0, 0.06)
+  );
 }
 
 /* Overlay root */
 .overlay-root {
-  position: fixed;
+  position: absolute;
   inset: 0;
   z-index: 9999;
+  /* prevents weird highlighting */
+  -webkit-tap-highlight-color: transparent;
+   overscroll-behavior: contain;
 }
 
-/* Backdrop */
+/* Backdrop (clickable) */
 .overlay-backdrop {
   position: absolute;
   inset: 0;
@@ -82,9 +88,11 @@
   backdrop-filter: blur(8px);
   opacity: 0;
   transition: opacity 500ms ease;
+  z-index: 1;
+  cursor: pointer;
 }
 
-/* FLIP card */
+/* FLIP card base */
 .overlay-card {
   position: absolute;
   border-radius: 18px;
@@ -92,7 +100,9 @@
   background-position: center;
   box-shadow: 0 40px 90px rgba(0, 0, 0, 0.55);
   overflow: hidden;
-  transition: left 520ms cubic-bezier(.2,.85,.2,1),
+  z-index: 2;
+  transition:
+    left 520ms cubic-bezier(.2,.85,.2,1),
     top 520ms cubic-bezier(.2,.85,.2,1),
     width 520ms cubic-bezier(.2,.85,.2,1),
     height 520ms cubic-bezier(.2,.85,.2,1),
@@ -110,8 +120,11 @@
   width: 100vw !important;
   height: 100vh !important;
   border-radius: 0 !important;
+    overflow: auto;          /* ✅ overlay can scroll */
+  -webkit-overflow-scrolling: touch;
 }
 
+/* Shade for readability (not clickable) */
 /* shade for readability */
 .overlay-shade {
   position: absolute;
@@ -124,6 +137,48 @@
     rgba(0, 0, 0, 0.05) 100%
   );
   pointer-events: none;
+  z-index: 4;          /* ✅ stays above bg, below content/subs */
+  opacity: 0;          /* ✅ start hidden */
+  transition: opacity 420ms ease; /* ✅ smooth on initial open */
+}
+
+/* ✅ fade in only once, and then stay */
+.overlay-root.is-open.show-once .overlay-shade {
+  opacity: 1;
+}
+
+/* optional: while closed */
+.overlay-root:not(.is-open) .overlay-shade {
+  opacity: 0;
+}
+
+
+/* Sub-image FLIP layer (visual only, sits above shade/bg) */
+.overlay-flip {
+  position: absolute;
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.55);
+  pointer-events: none;
+
+  /* IMPORTANT: below content/subs but above shade */
+  z-index: 4;
+
+  transition:
+    left 520ms cubic-bezier(.2,.85,.2,1),
+    top 520ms cubic-bezier(.2,.85,.2,1),
+    width 520ms cubic-bezier(.2,.85,.2,1),
+    height 520ms cubic-bezier(.2,.85,.2,1),
+    border-radius 520ms cubic-bezier(.2,.85,.2,1);
+}
+
+.overlay-flip.is-open {
+  left: 0 !important;
+  top: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  border-radius: 0 !important;
 }
 
 /* Content reveal */
@@ -135,7 +190,8 @@
   width: min(560px, 84vw);
   color: white;
   opacity: 0;
-  z-index: 5;
+  z-index: 6; /* above flip */
+  pointer-events: auto;
 }
 
 .overlay-root.is-open .overlay-content {
@@ -156,9 +212,10 @@
 .overlay-btn {
   margin-top: 18px;
   border: 0;
-  padding: 10px 16px;
+  padding:3px 8px;
   border-radius: 10px;
   cursor: pointer;
+  pointer-events: auto;
 }
 
 /* Same reveal vibe */
@@ -185,7 +242,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 14px;
-  z-index: 6;
+  z-index: 8; /* above flip + content */
+  pointer-events: auto;
 }
 
 .overlay-sub {
@@ -198,15 +256,100 @@
   background-position: center;
   cursor: pointer;
   overflow: hidden;
-  box-shadow: 0 22px 40px rgba(0,0,0,0.35);
+  box-shadow: 0 22px 40px rgba(0, 0, 0, 0.35);
+
   opacity: 0;
   transform: translateY(18px) scale(0.98);
+  filter: blur(10px);
+
+  /* ✅ let hover be smooth (and not fight keyframes later) */
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  will-change: transform;
+}
+.overlay-subs.bento {
+  position: absolute;
+  right: 6vw;
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(460px, 38vw);
+  height: min(520px, 60vh);
+  z-index: 8;
+  pointer-events: auto;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 92px;
+  gap: 14px;
+
+  /* keeps animation smooth */
+  align-content: center;
 }
 
+/* Each tile */
+.overlay-subs.bento .overlay-sub {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 22px 40px rgba(0, 0, 0, 0.35);
+
+  opacity: 0;
+  transform: translateY(18px) scale(0.98);
+  filter: blur(10px);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  will-change: transform;
+}
+
+/* reveal */
+.overlay-root.is-open .overlay-subs.bento .overlay-sub {
+  animation: sub-reveal 650ms cubic-bezier(.2,.85,.2,1) forwards;
+}
+
+/* hover */
+.overlay-root.is-open .overlay-subs.bento .overlay-sub:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 26px 55px rgba(0, 0, 0, 0.45);
+}
+
+/* ✅ Bento pattern (6 items) */
+.overlay-subs.bento .overlay-sub:nth-child(1) {
+  grid-column: span 2;
+  grid-row: span 2; /* big hero */
+}
+
+.overlay-subs.bento .overlay-sub:nth-child(2) {
+  grid-column: span 2;
+  grid-row: span 1; /* wide */
+}
+
+.overlay-subs.bento .overlay-sub:nth-child(3) {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.overlay-subs.bento .overlay-sub:nth-child(4) {
+  grid-column: span 1;
+  grid-row: span 2; /* tall */
+}
+.overlay-subs.bento .overlay-sub:nth-child(5) {
+  grid-column: span 2;
+  grid-row: span 1; /* wide */
+}
+
+.overlay-subs.bento .overlay-sub:nth-child(6) {
+  grid-column: span 1;
+  grid-row: span 1;
+}
 .overlay-root.is-open .overlay-sub {
   animation: sub-reveal 650ms cubic-bezier(.2,.85,.2,1) forwards;
 }
 
+/* ✅ reveal animation ends with blur=0, so hover won’t look weird */
 @keyframes sub-reveal {
   from {
     opacity: 0;
@@ -220,8 +363,10 @@
   }
 }
 
-.overlay-sub:hover {
+/* ✅ avoid transform fighting: only hover AFTER it is revealed */
+.overlay-root.is-open .overlay-sub:hover {
   transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 26px 55px rgba(0, 0, 0, 0.45);
 }
 
 /* Mobile */
@@ -247,4 +392,13 @@
     border-radius: 12px;
   }
 }
-  
+
+/* collapse phase faster (when not open) */
+.overlay-root:not(.is-open) .overlay-card {
+  transition:
+    left 220ms cubic-bezier(.2,.85,.2,1),
+    top 220ms cubic-bezier(.2,.85,.2,1),
+    width 220ms cubic-bezier(.2,.85,.2,1),
+    height 220ms cubic-bezier(.2,.85,.2,1),
+    border-radius 220ms cubic-bezier(.2,.85,.2,1);
+}
