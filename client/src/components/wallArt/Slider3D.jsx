@@ -137,7 +137,7 @@ const slides = useMemo(
   };
 
   return (
-    <section className="w-full py-16 sm:py-20 bg-white relative">
+    <section className="w-full py-16 sm:py-20 bg-white relative overflow-hidden">
         <img
         src="/assets/mandala.svg"
         alt="Mandala Decorative"
