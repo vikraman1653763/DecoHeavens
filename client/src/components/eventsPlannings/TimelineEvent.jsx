@@ -122,6 +122,16 @@ export default function TimelineEvent() {
 
   return (
     <div className="relative w-full overflow-clip">
+        <div className="max-w-7xl mx-auto  mt-15">
+        <h2 className="text-lg md:text-4xl text-primary dark:text-white max-w-4xl font-yatra">
+  Events We Plan & Execute
+</h2>
+<p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-4xl">
+  From intimate celebrations to large-scale events, here’s a look at the
+  experiences we thoughtfully plan, design, and deliver.
+</p>
+
+      </div>
       <Timeline data={data} />
     </div>
   );

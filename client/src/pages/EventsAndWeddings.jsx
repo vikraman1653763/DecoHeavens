@@ -1,4 +1,6 @@
+import DraggableEventCard from '@/components/eventsPlannings/DraggableEventCard'
 import EventsPlanningCTA from '@/components/eventsPlannings/EventsPlanningCTA'
+import EventStats from '@/components/eventsPlannings/EventStats'
 import EventImageSlider from '@/components/eventsPlannings/EventWeddingSlider'
 import TimelineEvent from '@/components/eventsPlannings/TimelineEvent'
 import WhyChooseUsEvents from '@/components/eventsPlannings/WhyChooseUsEvents'
@@ -8,9 +10,11 @@ const EventsAndWeddings = () => {
   return (
     <div>
       <EventImageSlider/>
+      <EventStats/>
       <TimelineEvent/>
-      <EventsPlanningCTA/>
+      <DraggableEventCard/>
       <WhyChooseUsEvents/>
+      <EventsPlanningCTA/>
     </div>
   )
 }

@@ -83,7 +83,7 @@ const WhyChooseUsEventsTabs = () => {
                   "sm:px-6 py-3 w-1/2 sm:w-auto justify-center sm:justify-start",
                   "border-b-2 title-font font-medium inline-flex items-center leading-none tracking-wider rounded-t",
                   isActive
-                    ? "bg-gray-100 border-primary text-primary"
+                    ? "bg-gray-100 border-secondary text-secondary"
                     : "border-gray-200 hover:text-gray-900",
                 ].join(" ")}
               >
@@ -117,7 +117,7 @@ const WhyChooseUsEventsTabs = () => {
 
         {/* Content */}
         <div className="flex flex-col text-center w-full">
-          <div className="mx-auto mb-3 w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+          <div className="mx-auto mb-3 w-12 h-12 rounded-full bg-secondary/10 text-secondary flex items-center justify-center">
             <CurrentIcon className="w-6 h-6" />
           </div>
 
