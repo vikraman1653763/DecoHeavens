@@ -30,7 +30,7 @@
   width: var(--w);
   height: var(--h);
   transform: translate(-50%, -50%) rotate(var(--rot));
-  border: 0;
+  border: 4px solid rgb(227, 227, 227);
   padding: 0;
   border-radius: 18px;
   background-size: cover;
@@ -40,12 +40,45 @@
   transition: transform 350ms ease, box-shadow 350ms ease;
   overflow: hidden;
   z-index: 5;
+ 
 }
 
 .wall-thumb:hover {
   transform: translate(-50%, -50%) rotate(var(--rot)) scale(1.03);
   box-shadow: 0 40px 70px rgba(0, 0, 0, 0.45);
 }
+.wall-thumb::before {
+  content: "";
+  position: absolute;
+  top: -60%;
+  left: -120%;
+  width: 100%;
+  height: 220%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(205, 12, 12, 0) 45%,
+    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0) 55%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(12deg);
+  pointer-events: none;
+  opacity: 0;
+}
+.wall-thumb:hover::before {
+  animation: wall-glare 2000ms ease-out forwards;
+  opacity: 1;
+}
+@keyframes wall-glare {
+  from {
+    left: -120%;
+  }
+  to {
+    left: 140%;
+  }
+}
+
 
 .wall-thumb::after {
   content: "";
@@ -120,11 +153,10 @@
   width: 100vw !important;
   height: 100vh !important;
   border-radius: 0 !important;
-    overflow: auto;          /* ✅ overlay can scroll */
+    overflow: auto;        
   -webkit-overflow-scrolling: touch;
 }
 
-/* Shade for readability (not clickable) */
 /* shade for readability */
 .overlay-shade {
   position: absolute;
@@ -200,8 +232,7 @@
 
 .overlay-title {
   font-size: clamp(2rem, 4vw, 4rem);
-  font-weight: 800;
-}
+  }
 
 .overlay-desc {
   margin-top: 14px;
@@ -257,31 +288,26 @@
   cursor: pointer;
   overflow: hidden;
   box-shadow: 0 22px 40px rgba(0, 0, 0, 0.35);
-
   opacity: 0;
   transform: translateY(18px) scale(0.98);
   filter: blur(10px);
-
-  /* ✅ let hover be smooth (and not fight keyframes later) */
   transition: transform 180ms ease, box-shadow 180ms ease;
   will-change: transform;
 }
 .overlay-subs.bento {
   position: absolute;
-  right: 6vw;
+  right: 10vw;
   top: 50%;
   transform: translateY(-50%);
-  width: min(460px, 38vw);
-  height: min(520px, 60vh);
+  width: 50vw;
+  height: auto;
   z-index: 8;
   pointer-events: auto;
 
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-auto-rows: 92px;
   gap: 14px;
-
-  /* keeps animation smooth */
   align-content: center;
 }
 
@@ -318,33 +344,28 @@
 
 /* ✅ Bento pattern (6 items) */
 .overlay-subs.bento .overlay-sub:nth-child(1) {
-  grid-column: span 2;
-  grid-row: span 2; /* big hero */
+  grid-column: span 3;
+  grid-row: span 3; 
 }
 
 .overlay-subs.bento .overlay-sub:nth-child(2) {
   grid-column: span 2;
-  grid-row: span 1; /* wide */
+  grid-row: span 4;
 }
 
 .overlay-subs.bento .overlay-sub:nth-child(3) {
-  grid-column: span 1;
-  grid-row: span 1;
+  grid-column: span 3;
+  grid-row: span 2;
+
 }
 
 .overlay-subs.bento .overlay-sub:nth-child(4) {
-  grid-column: span 1;
-  grid-row: span 2; /* tall */
-}
-.overlay-subs.bento .overlay-sub:nth-child(5) {
-  grid-column: span 2;
-  grid-row: span 1; /* wide */
+  grid-column: span 2 !important;
+  grid-row: span 3; 
+  grid-row-start:1 !important;
+  grid-column-start: 4;
 }
 
-.overlay-subs.bento .overlay-sub:nth-child(6) {
-  grid-column: span 1;
-  grid-row: span 1;
-}
 .overlay-root.is-open .overlay-sub {
   animation: sub-reveal 650ms cubic-bezier(.2,.85,.2,1) forwards;
 }
