@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import GoToTop from "./components/GoToTop";
 
 const App = () => {
   useEffect(() => {
@@ -22,6 +23,7 @@ const App = () => {
 
   return (
     <div>
+      <GoToTop/>
       <Navbar />
 
       <Routes>
