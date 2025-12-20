@@ -100,8 +100,7 @@ export default function TimelineEvent() {
       content: (
         <div>
           <p className="mb-6 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-            Surprise setups and intimate moments — concept, location styling,
-            timing coordination, and picture-perfect execution.
+           End-to-end planning of surprise setups and special moments—from concept and styling to timing and perfect execution.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <img
