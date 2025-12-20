@@ -12,8 +12,17 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import GoToTop from "./components/GoToTop";
+import useLenis from "./hooks/useLenis";
+import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => {
+
+   useLenis({
+    lerp: 0.08,
+    wheelMultiplier: 0.6,
+    disableOnTouch: true,
+  });
+
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -23,6 +32,7 @@ const App = () => {
 
   return (
     <div>
+      <ScrollToTop/>
       <GoToTop/>
       <Navbar />
 
