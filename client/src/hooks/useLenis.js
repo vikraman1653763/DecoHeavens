@@ -1,14 +1,6 @@
-// src/hooks/useLenis.js
 import { useEffect, useRef } from "react";
 import Lenis from "lenis";
 
-/**
- * Smooth scrolling with Lenis (refined)
- * - Runs a single RAF loop
- * - Cleans up properly
- * - Optional: disable on touch devices
- * - Optional: expose instance for integrations (Framer Motion / GSAP)
- */
 const useLenis = ({
   enabled = true,
   disableOnTouch = true,
@@ -24,7 +16,6 @@ const useLenis = ({
   useEffect(() => {
     if (!enabled) return;
 
-    // Optionally skip Lenis on touch devices (keeps native scrolling)
     const isTouch =
       typeof window !== "undefined" &&
       ("ontouchstart" in window || navigator.maxTouchPoints > 0);
@@ -37,7 +28,7 @@ const useLenis = ({
       lerp,
       wheelMultiplier,
       anchors,
-      autoRaf: false, // we control RAF ourselves
+      autoRaf: false,
     });
 
     lenisRef.current = lenis;
@@ -53,10 +44,8 @@ const useLenis = ({
       if (rafIdRef.current) cancelAnimationFrame(rafIdRef.current);
       rafIdRef.current = null;
 
-      if (lenisRef.current) {
-        lenisRef.current.destroy();
-        lenisRef.current = null;
-      }
+      lenisRef.current?.destroy();
+      lenisRef.current = null;
     };
   }, [
     enabled,
@@ -68,7 +57,6 @@ const useLenis = ({
     anchors,
   ]);
 
-  // If you ever want to access the Lenis instance (for manual scrollTo etc.)
   return lenisRef;
 };
 
