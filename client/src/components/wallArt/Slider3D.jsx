@@ -143,7 +143,11 @@ const WallArtSlider3D = () => {
   const scrollTo = (idx) => {
     const el = cardRefs.current[idx];
     if (!el) return;
-    el.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+    el.scrollIntoView({
+      behavior: "smooth",
+      inline: "center",
+      block: "nearest",
+    });
   };
 
   useEffect(() => {
@@ -151,14 +155,18 @@ const WallArtSlider3D = () => {
     const scroller = scrollerRef.current;
     if (!scroller) return;
 
-    const cards = Array.from(scroller.querySelectorAll("[data-mobile-card='1']"));
+    const cards = Array.from(
+      scroller.querySelectorAll("[data-mobile-card='1']")
+    );
     if (!cards.length) return;
 
     const io = new IntersectionObserver(
       (entries) => {
         const best = entries
           .filter((x) => x.isIntersecting)
-          .sort((a, b) => (b.intersectionRatio || 0) - (a.intersectionRatio || 0))[0];
+          .sort(
+            (a, b) => (b.intersectionRatio || 0) - (a.intersectionRatio || 0)
+          )[0];
         if (!best) return;
         const idx = Number(best.target.getAttribute("data-idx"));
         if (!Number.isNaN(idx)) setActive(idx);
@@ -206,8 +214,8 @@ const WallArtSlider3D = () => {
             Our Wall Art Categories
           </h2>
           <p className="font-poppins text-sm sm:text-base text-neutral-600 mt-2">
-            From modern textures to traditional patterns — our wall art is crafted
-            to match your space and your story.
+            From modern textures to traditional patterns — our wall art is
+            crafted to match your space and your story.
           </p>
         </div>
 
@@ -229,7 +237,9 @@ const WallArtSlider3D = () => {
             </button>
 
             <div className="text-center">
-              <div className="text-xs font-poppins text-neutral-500">Category</div>
+              <div className="text-xs font-poppins text-neutral-500">
+                Category
+              </div>
               <div className="font-yatra text-xl text-primary leading-tight">
                 {slides[active]?.title}
               </div>
@@ -286,11 +296,17 @@ const WallArtSlider3D = () => {
                 }}
               >
                 <div className="h-[300px] w-full overflow-hidden">
-                  <img src={s.img} alt={s.title} className="h-full w-full object-cover" />
+                  <img
+                    src={s.img}
+                    alt={s.title}
+                    className="h-full w-full object-cover"
+                  />
                 </div>
 
                 <div className="p-5">
-                  <div className="font-yatra text-xl text-primary">{s.title}</div>
+                  <div className="font-yatra text-xl text-primary">
+                    {s.title}
+                  </div>
                   <div className="mt-2 inline-flex w-fit items-center rounded-full px-3 py-1 text-xs font-poppins bg-secondary/25 text-neutral-800">
                     {s.tag}
                   </div>
@@ -380,7 +396,9 @@ const WallArtSlider3D = () => {
                         </motion.h3>
                       </AnimatePresence>
                     ) : (
-                      <h3 className="font-yatra text-xl text-primary">{s.title}</h3>
+                      <h3 className="font-yatra text-xl text-primary">
+                        {s.title}
+                      </h3>
                     )}
 
                     {isActive ? (

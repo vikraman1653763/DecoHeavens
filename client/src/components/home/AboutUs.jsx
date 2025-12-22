@@ -84,14 +84,18 @@ const AboutUs = () => {
             <span className="text-primary text-lg mt-0.5">
               <GiTwirlyFlower />
             </span>
-            <span className="text-left">Seamless execution with premium materials & concepts.</span>
+            <span className="text-left">
+              Seamless execution with premium materials & concepts.
+            </span>
           </li>
 
           <li className="flex items-start gap-2 justify-start">
             <span className="text-primary text-lg mt-0.5">
               <GiTwirlyFlower />
             </span>
-            <span className="text-left">Personalized experiences for weddings, homes & wall art.</span>
+            <span className="text-left">
+              Personalized experiences for weddings, homes & wall art.
+            </span>
           </li>
         </ul>
 

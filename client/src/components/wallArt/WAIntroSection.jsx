@@ -45,10 +45,11 @@ const WallArtIntroSection = () => {
             transition={{ duration: 0.8, delay: 0.15 }}
             className="mt-4 font-poppins text-sm sm:text-base text-neutral-700 leading-relaxed"
           >
-            From premium home interiors to large-scale public murals, we create wall
-            art that transforms blank spaces into inspiring stories. We work with
-            you on theme, colors, and placement — delivering clean execution,
-            durable finishes, and a look that fits your space perfectly.
+            From premium home interiors to large-scale public murals, we create
+            wall art that transforms blank spaces into inspiring stories. We
+            work with you on theme, colors, and placement — delivering clean
+            execution, durable finishes, and a look that fits your space
+            perfectly.
           </motion.p>
 
           {/* ✅ Replaces chips */}

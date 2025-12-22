@@ -78,8 +78,12 @@ export default function WallArtProcessTimeline() {
       <div className="max-w-6xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-10 sm:mb-12">
-          <p className="font-dance text-xl text-secondary">Clear steps, smooth execution</p>
-          <h2 className="font-yatra text-3xl sm:text-4xl text-primary mt-2">Our Wall Art Process</h2>
+          <p className="font-dance text-xl text-secondary">
+            Clear steps, smooth execution
+          </p>
+          <h2 className="font-yatra text-3xl sm:text-4xl text-primary mt-2">
+            Our Wall Art Process
+          </h2>
           <p className="font-poppins text-sm sm:text-base text-neutral-600 mt-2">
             From first idea to final finish — simple, transparent, and guided.
           </p>
@@ -107,21 +111,30 @@ export default function WallArtProcessTimeline() {
                   <TimelineDot
                     sx={{
                       bgcolor: p.dotColor,
-                      boxShadow: "0 0 0 6px rgba(255,255,255,0.75), 0 10px 25px -15px rgba(0,0,0,0.45)",
+                      boxShadow:
+                        "0 0 0 6px rgba(255,255,255,0.75), 0 10px 25px -15px rgba(0,0,0,0.45)",
                     }}
                   >
                     {p.icon}
                   </TimelineDot>
 
                   {idx !== PROCESS.length - 1 && (
-                    <TimelineConnector sx={{ backgroundColor: "#cad5e2", width: "2px" }} />
+                    <TimelineConnector
+                      sx={{ backgroundColor: "#cad5e2", width: "2px" }}
+                    />
                   )}
                 </TimelineSeparator>
 
                 {/* Card */}
                 <TimelineContent sx={{ py: "10px", px: { xs: 1, sm: 2 } }}>
                   <div
-                    data-aos={isMobile ? "fade-up" : idx % 2 === 0 ? "fade-up-right" : "fade-up-left"}
+                    data-aos={
+                      isMobile
+                        ? "fade-up"
+                        : idx % 2 === 0
+                        ? "fade-up-right"
+                        : "fade-up-left"
+                    }
                     data-aos-delay={isMobile ? 0 : idx * 120}
                   >
                     <MagicCard className="rounded-2xl overflow-hidden">

@@ -30,55 +30,100 @@ const CarouselSliderMobile = () => {
         bg: "/assets/wa15.webp",
         name: "Urban Calm",
         des: "A refined modern wall art set designed to bring balance, softness, and contemporary elegance to living spaces.",
-        subs: ["/assets/wa15.webp", "/assets/wa16.webp", "/assets/wa17.webp", "/assets/wa18.webp"],
+        subs: [
+          "/assets/wa15.webp",
+          "/assets/wa16.webp",
+          "/assets/wa17.webp",
+          "/assets/wa18.webp",
+        ],
       },
       {
         bg: "/assets/wa19.webp",
         name: "Nature Flow",
         des: "Inspired by organic forms and natural tones, this wall art collection adds warmth and visual harmony to interiors.",
-        subs: ["/assets/wa19.webp", "/assets/wa20.webp", "/assets/wa21.webp", "/assets/wa22.webp"],
+        subs: [
+          "/assets/wa19.webp",
+          "/assets/wa20.webp",
+          "/assets/wa21.webp",
+          "/assets/wa22.webp",
+        ],
       },
       {
         bg: "/assets/wa23.webp",
         name: "Minimal Horizon",
         des: "A minimalist wall art series crafted for modern homes, featuring clean compositions and timeless aesthetic appeal.",
-        subs: ["/assets/wa23.webp", "/assets/wa24.webp", "/assets/wa25.webp", "/assets/wa26.webp"],
+        subs: [
+          "/assets/wa23.webp",
+          "/assets/wa24.webp",
+          "/assets/wa25.webp",
+          "/assets/wa26.webp",
+        ],
       },
       {
         bg: "/assets/wa27.webp",
         name: "Abstract Balance",
         des: "Bold yet composed, this abstract wall art set creates a striking focal point while maintaining visual equilibrium.",
-        subs: ["/assets/wa27.webp", "/assets/wa28.webp", "/assets/wa29.webp", "/assets/wa30.webp"],
+        subs: [
+          "/assets/wa27.webp",
+          "/assets/wa28.webp",
+          "/assets/wa29.webp",
+          "/assets/wa30.webp",
+        ],
       },
       {
         bg: "/assets/wa31.webp",
         name: "Textured Essence",
         des: "A tactile-inspired wall art collection blending depth, layers, and modern design sensibilities.",
-        subs: ["/assets/wa31.webp", "/assets/wa32.webp", "/assets/wa33.webp", "/assets/wa34.webp"],
+        subs: [
+          "/assets/wa31.webp",
+          "/assets/wa32.webp",
+          "/assets/wa33.webp",
+          "/assets/wa34.webp",
+        ],
       },
       {
         bg: "/assets/wa35.webp",
         name: "Modern Rhythm",
         des: "Dynamic forms and contemporary tones come together in this wall art set to energize modern interiors.",
-        subs: ["/assets/wa35.webp", "/assets/wa36.webp", "/assets/wa37.webp", "/assets/wa38.webp"],
+        subs: [
+          "/assets/wa35.webp",
+          "/assets/wa36.webp",
+          "/assets/wa37.webp",
+          "/assets/wa38.webp",
+        ],
       },
       {
         bg: "/assets/wa39.webp",
         name: "Soft Geometry",
         des: "A modern geometric wall art series with subtle shapes and balanced compositions for elegant spaces.",
-        subs: ["/assets/wa39.webp", "/assets/wa40.webp", "/assets/wa41.webp", "/assets/wa42.webp"],
+        subs: [
+          "/assets/wa39.webp",
+          "/assets/wa40.webp",
+          "/assets/wa41.webp",
+          "/assets/wa42.webp",
+        ],
       },
       {
         bg: "/assets/wa43.webp",
         name: "Timeless Forms",
         des: "A classic-inspired wall art collection reimagined through a contemporary design language.",
-        subs: ["/assets/wa43.webp", "/assets/wa44.webp", "/assets/wa45.webp", "/assets/wa46.webp"],
+        subs: [
+          "/assets/wa43.webp",
+          "/assets/wa44.webp",
+          "/assets/wa45.webp",
+          "/assets/wa46.webp",
+        ],
       },
       {
         bg: "/assets/wa47.webp",
         name: "Artistic Layers",
         des: "Layered textures and expressive forms define this modern wall art set, ideal for statement walls.",
-        subs: ["/assets/wa47.webp", "/assets/wa48.webp", "/assets/wa15.webp", "/assets/wa16.webp"],
+        subs: [
+          "/assets/wa47.webp",
+          "/assets/wa48.webp",
+          "/assets/wa15.webp",
+          "/assets/wa16.webp",
+        ],
       },
     ],
     []
@@ -109,7 +154,9 @@ const CarouselSliderMobile = () => {
       (entries) => {
         const best = entries
           .filter((x) => x.isIntersecting)
-          .sort((a, b) => (b.intersectionRatio || 0) - (a.intersectionRatio || 0))[0];
+          .sort(
+            (a, b) => (b.intersectionRatio || 0) - (a.intersectionRatio || 0)
+          )[0];
 
         if (!best) return;
 
@@ -139,10 +186,15 @@ const CarouselSliderMobile = () => {
     const scroller = scrollerRef.current;
     const card = scroller?.querySelector(`[data-idx='${idx}']`);
     if (!scroller || !card) return;
-    card.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+    card.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "center",
+    });
   };
 
-  const prev = () => slides.length && scrollTo((activeIdx - 1 + slides.length) % slides.length);
+  const prev = () =>
+    slides.length && scrollTo((activeIdx - 1 + slides.length) % slides.length);
   const next = () => slides.length && scrollTo((activeIdx + 1) % slides.length);
 
   // ✅ for mobile we can use viewport rect (fixed modal), no stageRef needed
@@ -268,8 +320,12 @@ const CarouselSliderMobile = () => {
           </button>
 
           <div className="text-center">
-            <div className="text-sm text-white/90 font-medium tracking-wider">Wall Art</div>
-            <div className="text-white font-yatra text-xl leading-none">{slides[activeIdx]?.name}</div>
+            <div className="text-sm text-white/90 font-medium tracking-wider">
+              Wall Art
+            </div>
+            <div className="text-white font-yatra text-xl leading-none">
+              {slides[activeIdx]?.name}
+            </div>
           </div>
 
           <button
@@ -326,15 +382,21 @@ const CarouselSliderMobile = () => {
               >
                 <div
                   className="w-full h-[420px] bg-center bg-cover"
-                  style={{ backgroundImage: isLoaded ? `url(${s.bg})` : "none" }}
+                  style={{
+                    backgroundImage: isLoaded ? `url(${s.bg})` : "none",
+                  }}
                 >
                   {!isLoaded && <span className="thumb-skeleton" />}
                 </div>
 
                 <div className="absolute inset-x-0 bottom-0 p-4">
                   <div className="rounded-2xl bg-white/92 backdrop-blur border border-black/5 p-4 text-left">
-                    <div className="font-yatra text-lg text-black leading-tight">{s.name}</div>
-                    <div className="mt-1 text-sm text-neutral-700 line-clamp-2">{s.des}</div>
+                    <div className="font-yatra text-lg text-black leading-tight">
+                      {s.name}
+                    </div>
+                    <div className="mt-1 text-sm text-neutral-700 line-clamp-2">
+                      {s.des}
+                    </div>
                     <div className="mt-3 text-xs font-semibold text-neutral-800 inline-flex items-center gap-2">
                       Tap to view <span aria-hidden>→</span>
                     </div>
@@ -391,8 +453,13 @@ const CarouselSliderMobile = () => {
                 top: overlay.phase === "to" ? "50%" : overlay.from.top,
                 width: overlay.phase === "to" ? "92vw" : overlay.from.width,
                 height: overlay.phase === "to" ? "86vh" : overlay.from.height,
-                transform: overlay.phase === "to" ? "translate(-50%, -50%)" : "translate(0,0)",
-                backgroundImage: loadedMap[overlay.bg] ? `url(${overlay.bg})` : "none",
+                transform:
+                  overlay.phase === "to"
+                    ? "translate(-50%, -50%)"
+                    : "translate(0,0)",
+                backgroundImage: loadedMap[overlay.bg]
+                  ? `url(${overlay.bg})`
+                  : "none",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -407,12 +474,25 @@ const CarouselSliderMobile = () => {
                     overlay.flip.phase === "to" ? "opacity-100" : "opacity-100",
                   ].join(" ")}
                   style={{
-                    left: overlay.flip.phase === "to" ? 0 : overlay.flip.from.left,
-                    top: overlay.flip.phase === "to" ? 0 : overlay.flip.from.top,
-                    width: overlay.flip.phase === "to" ? "100%" : overlay.flip.from.width,
-                    height: overlay.flip.phase === "to" ? "100%" : overlay.flip.from.height,
-                    transform: overlay.flip.phase === "to" ? "translate(0,0)" : "translate(0,0)",
-                    backgroundImage: loadedMap[overlay.flip.bg] ? `url(${overlay.flip.bg})` : "none",
+                    left:
+                      overlay.flip.phase === "to" ? 0 : overlay.flip.from.left,
+                    top:
+                      overlay.flip.phase === "to" ? 0 : overlay.flip.from.top,
+                    width:
+                      overlay.flip.phase === "to"
+                        ? "100%"
+                        : overlay.flip.from.width,
+                    height:
+                      overlay.flip.phase === "to"
+                        ? "100%"
+                        : overlay.flip.from.height,
+                    transform:
+                      overlay.flip.phase === "to"
+                        ? "translate(0,0)"
+                        : "translate(0,0)",
+                    backgroundImage: loadedMap[overlay.flip.bg]
+                      ? `url(${overlay.flip.bg})`
+                      : "none",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                   }}
@@ -434,8 +514,12 @@ const CarouselSliderMobile = () => {
               {/* Content */}
               <div className="absolute inset-x-0 bottom-0 z-10 p-4">
                 <div className="rounded-2xl bg-white/92 backdrop-blur border border-black/5 p-4">
-                  <div className="font-yatra text-xl text-black">{overlay.name}</div>
-                  <div className="mt-1 text-sm text-neutral-700">{overlay.des}</div>
+                  <div className="font-yatra text-xl text-black">
+                    {overlay.name}
+                  </div>
+                  <div className="mt-1 text-sm text-neutral-700">
+                    {overlay.des}
+                  </div>
 
                   {/* Subs */}
                   {overlay.subs?.length > 0 && (
@@ -448,7 +532,9 @@ const CarouselSliderMobile = () => {
                             type="button"
                             className="relative aspect-square rounded-2xl overflow-hidden border border-black/10 bg-white/60"
                             style={{
-                              backgroundImage: isSubLoaded ? `url(${url})` : "none",
+                              backgroundImage: isSubLoaded
+                                ? `url(${url})`
+                                : "none",
                               backgroundSize: "cover",
                               backgroundPosition: "center",
                             }}
@@ -458,7 +544,9 @@ const CarouselSliderMobile = () => {
                             }}
                             aria-label={`Open sub image ${i + 1}`}
                           >
-                            {!isSubLoaded && <span className="thumb-skeleton" />}
+                            {!isSubLoaded && (
+                              <span className="thumb-skeleton" />
+                            )}
                           </button>
                         );
                       })}

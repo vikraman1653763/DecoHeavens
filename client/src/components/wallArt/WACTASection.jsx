@@ -10,7 +10,6 @@ const WallArtCTASection = () => {
         <div className="bg-neutral-900 rounded-2xl overflow-hidden w-full">
           {/* ✅ MOBILE: image first | DESKTOP: unchanged */}
           <div className="grid grid-cols-1 md:grid-cols-2 items-center">
-            
             {/* RIGHT IMAGE (mobile first) */}
             <img
               src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80"
@@ -33,21 +32,19 @@ const WallArtCTASection = () => {
               </p>
 
               <h2 className="mt-2 text-2xl sm:text-3xl md:text-4xl text-white leading-tight">
-                Transform Your{" "}
-                <span className="font-yatra">Space</span>{" "}
-                with
+                Transform Your <span className="font-yatra">Space</span> with
                 <span className="text-primary"> Custom Wall Art</span>
               </h2>
 
               <p className="mt-5 font-poppins text-sm text-slate-300 leading-relaxed">
-                From personalized home walls to large-scale commercial and public
-                art projects, we design and execute wall art that reflects your
-                vision, culture, and space.
+                From personalized home walls to large-scale commercial and
+                public art projects, we design and execute wall art that
+                reflects your vision, culture, and space.
               </p>
 
               <p className="mt-2 font-poppins text-sm text-slate-300 leading-relaxed">
-                Share your wall photos or ideas — our team will suggest concepts,
-                themes, and a clear quote tailored just for you.
+                Share your wall photos or ideas — our team will suggest
+                concepts, themes, and a clear quote tailored just for you.
               </p>
 
               {/* ✅ MOBILE: full width button */}
