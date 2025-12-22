@@ -40,9 +40,9 @@ const WhatWeDoPillars = () => {
   ];
 
   return (
-    <section className="w-full my-10">
+    <section className="w-full my-10 px-4 md:px-0">
       {/* Heading */}
-      <h1 className="text-4xl text-primary font-yatra font-semibold text-center mx-auto">
+      <h1 className="text-3xl sm:text-4xl text-primary font-yatra font-semibold text-center mx-auto">
         What We Do
       </h1>
       <p className="text-sm text-slate-500 text-center mt-2 max-w-lg mx-auto">
@@ -51,11 +51,29 @@ const WhatWeDoPillars = () => {
       </p>
 
       {/* Cards */}
-      <div className="flex items-center gap-6 h-[420px] w-full max-w-5xl mt-12 mx-auto">
+      <div
+        className="
+          mt-8 md:mt-12 mx-auto w-full max-w-5xl
+          flex gap-4 md:gap-6
+          md:items-center
+          md:h-[420px]
+          overflow-x-auto md:overflow-visible
+          snap-x snap-mandatory md:snap-none
+          pb-2
+        "
+      >
         {pillars.map((item, i) => (
           <div
             key={i}
-            className="relative group grow transition-all w-56 h-[420px] duration-500 hover:w-full rounded-3xl overflow-hidden"
+            className="
+              relative group
+              flex-shrink-0 md:flex-shrink
+              w-[85%] sm:w-[70%] md:w-56
+              h-[360px] sm:h-[400px] md:h-[420px]
+              rounded-3xl overflow-hidden
+              snap-center
+              md:grow md:transition-all md:duration-500 md:hover:w-full
+            "
           >
             <img
               className={`h-full w-full object-cover ${item.pos}`}
@@ -64,8 +82,16 @@ const WhatWeDoPillars = () => {
               loading="lazy"
             />
 
-            <div className="absolute inset-0 flex flex-col justify-end p-8 text-white bg-black/55 opacity-0 group-hover:opacity-100 transition-all duration-300">
-              <h2 className="text-3xl font-semibold font-dance text-rose-200">
+            {/* Overlay: always visible on mobile, hover on desktop */}
+            <div
+              className="
+                absolute inset-0 flex flex-col justify-end
+                p-6 sm:p-8 text-white bg-black/55
+                opacity-100 md:opacity-0 md:group-hover:opacity-100
+                transition-all duration-300
+              "
+            >
+              <h2 className="text-2xl sm:text-3xl font-semibold font-dance text-rose-200">
                 {item.title}
               </h2>
 
@@ -89,6 +115,11 @@ const WhatWeDoPillars = () => {
           </div>
         ))}
       </div>
+
+      {/* Optional small helper text only on mobile */}
+      <p className="mt-2 text-xs text-slate-400 text-center md:hidden">
+        Swipe to explore
+      </p>
     </section>
   );
 };

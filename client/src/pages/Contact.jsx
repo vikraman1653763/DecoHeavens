@@ -8,9 +8,9 @@ const Contact = () => {
   return (
     <div>
       <ContactHero/>
-      <ContactForm/>
       <ContactMapSection/>
       <ContactInfoSection/>
+      <ContactForm/>
     </div>
   )
 }

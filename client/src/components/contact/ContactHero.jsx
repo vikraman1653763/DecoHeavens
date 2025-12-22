@@ -4,10 +4,10 @@ const ContactHero = () => {
   return (
     <section
       className="
-        bg-linear-to-b 
+        bg-linear-to-b
         from-[#fff7f3] via-[#fffbee] to-[#e6f0ec]
-        px-3 sm:px-10 
-        pt-10 pb-16 
+        px-3 sm:px-10
+        pt-10 pb-16
         overflow-hidden
       "
     >
@@ -16,15 +16,16 @@ const ContactHero = () => {
         <button
           type="button"
           className="
-            mt-10 mb-6
-            flex items-center space-x-2
+            mt-8 sm:mt-10 mb-6
+            flex flex-wrap items-center justify-center gap-2 sm:gap-0 sm:space-x-2
             border border-primary
-            text-primary 
+            text-primary
             text-[11px] sm:text-xs
-            rounded-full 
-            px-4 pr-1.5 py-1.5 
-            hover:bg-primary/5 
+            rounded-full
+            px-4 pr-1.5 py-1.5
+            hover:bg-primary/5
             transition
+            max-w-full
           "
         >
           <span className="font-medium">
@@ -32,10 +33,11 @@ const ContactHero = () => {
           </span>
           <span
             className="
-              flex items-center justify-center 
-              size-6 p-1 
-              rounded-full 
+              flex items-center justify-center
+              size-6 p-1
+              rounded-full
               bg-primary
+              shrink-0
             "
           >
             <svg
@@ -59,11 +61,11 @@ const ContactHero = () => {
         {/* Heading */}
         <h1
           className="
-            text-center 
-            text-slate-900 
-            font-semibold 
-            text-3xl sm:text-4xl md:text-5xl 
-            max-w-2xl 
+            text-center
+            text-slate-900
+            font-semibold
+            text-3xl sm:text-4xl md:text-5xl
+            max-w-2xl
             leading-tight
           "
         >
@@ -75,11 +77,11 @@ const ContactHero = () => {
         {/* Subheading */}
         <p
           className="
-            mt-4 
-            text-center 
-            text-slate-600 
-            max-w-md 
-            text-sm sm:text-base 
+            mt-4
+            text-center
+            text-slate-600
+            max-w-md
+            text-sm sm:text-base
             leading-relaxed
           "
         >
@@ -92,14 +94,14 @@ const ContactHero = () => {
         <a
           href="#form"
           className="
-            mt-8 
-            bg-primary 
-            text-white 
-            px-6 pr-2.5 py-2.5 
-            rounded-full 
-            text-sm font-medium 
-            flex items-center space-x-2 
-            hover:bg-primary/90 
+            mt-8
+            bg-primary
+            text-white
+            px-6 pr-2.5 py-2.5
+            rounded-full
+            text-sm font-medium
+            flex items-center space-x-2
+            hover:bg-primary/90
             transition
           "
         >
@@ -124,11 +126,11 @@ const ContactHero = () => {
         {/* Hero image */}
         <img
           className="
-            rounded-32px
-            mt-14 
-            h-64 sm:h-72 
-            w-full 
-            object-cover 
+            rounded-[32px]
+            mt-10 sm:mt-14
+            h-64 sm:h-72
+            w-full
+            object-cover
             max-w-4xl
           "
           src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop"

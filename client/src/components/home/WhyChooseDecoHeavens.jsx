@@ -23,18 +23,22 @@ const WhyChooseDecoHeavens = () => {
   ];
 
   return (
-    <section className="px-4 sm:px-20 xl:px-32 py-20 relative">
-      <div className=" absolute  w-full  left-1/2 top-3/4 -translate-x-1/2 -translate-y-1/2 flex flex-row overflow-hidden">
+    <section className="px-4 sm:px-20 xl:px-32 py-16 md:py-20 relative overflow-hidden">
+      {/* Background design (safe on mobile) */}
+      <div className="absolute left-1/2 top-3/4 -translate-x-1/2 -translate-y-1/2 flex flex-row opacity-20 pointer-events-none select-none">
         <img
           src="/assets/design.svg"
-          className="object-cover opacity-20 pointer-events-none "
+          alt=""
+          className="object-cover w-[520px] sm:w-[700px] md:w-auto"
         />
         <img
           src="/assets/design.svg"
-          className="object-cover opacity-20 pointer-events-none "
+          alt=""
+          className="object-cover w-[520px] sm:w-[700px] md:w-auto"
         />
       </div>
-      <div className="max-w-6xl mx-auto grid gap-10 md:grid-cols-[1.1fr,1.2fr] items-center">
+
+      <div className="max-w-6xl mx-auto grid gap-10 md:grid-cols-[1.1fr,1.2fr] items-center relative z-10">
         {/* Left Section */}
         <div className="relative">
           {/* Tag */}
@@ -48,11 +52,23 @@ const WhyChooseDecoHeavens = () => {
             <img
               src="/assets/col.png"
               alt="Beautifully decorated event by Deco Heavens"
-              className="w-full h-80 md:h-88 object-cover"
+              className="w-full h-72 sm:h-80 md:h-88 object-cover"
             />
           </div>
 
-          {/* Floating Small Image */}
+          {/* Mobile: show the small image as a normal card */}
+          <div className="mt-4 md:hidden w-full rounded-2xl overflow-hidden shadow-lg border border-primary/40 bg-white">
+            <img
+              src="/assets/id4.webp"
+              alt="Mural & decor detail"
+              className="w-full h-40 object-cover"
+            />
+            <div className="px-3 py-2 text-xs text-slate-600">
+              Every corner styled with meaning, not just aesthetics.
+            </div>
+          </div>
+
+          {/* Desktop: floating small image (unchanged) */}
           <div className="hidden md:block absolute -bottom-6 -right-6 w-40 rounded-2xl overflow-hidden shadow-lg border border-primary/40 bg-white">
             <img
               src="/assets/id4.webp"
@@ -66,73 +82,69 @@ const WhyChooseDecoHeavens = () => {
         </div>
 
         {/* Right Section */}
-        <div>
+        <div className="text-center md:text-left">
           <h2 className="font-yatra text-3xl md:text-4xl text-primary leading-snug">
-            Why Choose 
+            Why Choose{" "}
             <AnimatedGradientText
               speed={1}
-              colorFrom="#f9a8d4"  
-              colorTo="#9db7a4"     
-              className="text-4xl font-semibold tracking-tight font-dance "
+              colorFrom="#f9a8d4"
+              colorTo="#9db7a4"
+              className="text-4xl font-semibold tracking-tight font-dance"
             >
               Deco Heavens?
             </AnimatedGradientText>
           </h2>
+
           <p className="text-slate-600 mt-3 max-w-full">
             Because your story deserves more than generic decor. We blend
             tradition, artistry, and thoughtful design to create spaces and
             moments that feel deeply personal and unforgettable.
           </p>
 
-          {/* Feature Cards — row, decorated */}
+          {/* Feature Cards */}
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {features.map((feature, idx) => (
-<motion.div
-  key={idx}
-  initial={{ opacity: 0}}
-  whileInView={{ opacity: 1 }}
-  viewport={{ once: false, amount: 0.2 }}
-  transition={{
-    duration: 0.9,
-    ease: "easeInOut"
-  }}
-  className="
-    relative rounded-2xl p-px
-    shadow-md hover:shadow-primary/40
-    transition-transform duration-300 hover:-translate-y-1
-  "
->
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{ duration: 0.9, ease: "easeInOut" }}
+                className="
+                  relative rounded-2xl p-px
+                  shadow-md hover:shadow-primary/40
+                  transition-transform duration-300 hover:-translate-y-1
+                "
+              >
+                <BorderBeam
+                  initialOffset={0}
+                  reverse
+                  colorFrom="#D9A7FF"
+                  colorTo="#FECFEF"
+                />
+                <BorderBeam
+                  initialOffset={50}
+                  reverse
+                  colorFrom="#D9A7FF"
+                  colorTo="#FECFEF"
+                />
 
-  <BorderBeam
-    initialOffset={0}
-    reverse
-    colorFrom="#D9A7FF"
-    colorTo="#FECFEF"
-  />
-  <BorderBeam
-    initialOffset={50}
-    reverse
-    colorFrom="#D9A7FF"
-    colorTo="#FECFEF"
-  />
-
-  <div className="h-full flex flex-col rounded-2xl bg-white/80 backdrop-blur-sm p-4">
-    <div className="overflow-hidden rounded-xl border border-primary/20 mb-3">
-      <img
-        src={feature.img}
-        alt={feature.title}
-        className="w-full h-32 md:h-36 object-cover transform hover:scale-105 transition-transform duration-500"
-      />
-    </div>
-    <h3 className="text-sm md:text-base font-semibold text-slate-800">
-      {feature.title}
-    </h3>
-    <p className="text-xs md:text-sm text-slate-600 mt-2 leading-relaxed">
-      {feature.desc}
-    </p>
-  </div>
-</motion.div>
-
+                <div className="h-full flex flex-col rounded-2xl bg-white/80 backdrop-blur-sm p-4 text-left">
+                  <div className="overflow-hidden rounded-xl border border-primary/20 mb-3">
+                    <img
+                      src={feature.img}
+                      alt={feature.title}
+                      className="w-full h-32 md:h-36 object-cover transform hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <h3 className="text-sm md:text-base font-semibold text-slate-800">
+                    {feature.title}
+                  </h3>
+                  <p className="text-xs md:text-sm text-slate-600 mt-2 leading-relaxed">
+                    {feature.desc}
+                  </p>
+                </div>
+              </motion.div>
             ))}
           </div>
 

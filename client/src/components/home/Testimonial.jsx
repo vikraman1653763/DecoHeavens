@@ -63,29 +63,29 @@ const Testimonials = () => {
   ];
 
   return (
-    <div className="px-4 sm:px-20 xl:px-32 py-24">
+    <section className="px-4 sm:px-20 xl:px-32 py-16 sm:py-24 overflow-hidden">
       {/* Section Heading */}
-      <div className="text-center mb-10">
-        <h2 className="text-primary text-[42px] font-semibold font-yatra">
+      <div className="text-center mb-8 sm:mb-10">
+        <h2 className="text-primary text-3xl sm:text-[42px] font-semibold font-yatra leading-tight">
           Loved by Those We Design For
         </h2>
-        <p className="text-slate-600 max-w-lg mx-auto">
+        <p className="text-slate-600 max-w-lg mx-auto mt-2 text-sm sm:text-base">
           Hear from the couples, homeowners, and brands who trusted Deco Heavens
           to bring their stories to life.
         </p>
       </div>
 
       {/* ⭐ Velocity Scrolling Cards – ONE ROW */}
-      <ScrollVelocityContainer className="w-full py-10">
+      <ScrollVelocityContainer className="w-full py-6 sm:py-10">
         <ScrollVelocityRow baseVelocity={3} direction={1}>
-          <div className="flex gap-6 px-3 py-2">
+          <div className="flex gap-4 sm:gap-6 px-2 sm:px-3 py-2">
             {dummyTestimonialData.map((t, i) => (
               <TestimonialCard key={i} testimonial={t} />
             ))}
           </div>
         </ScrollVelocityRow>
       </ScrollVelocityContainer>
-    </div>
+    </section>
   );
 };
 
@@ -94,8 +94,10 @@ const TestimonialCard = ({ testimonial }) => (
   <div
     className="
       shrink-0
-      p-6 w-72 rounded-xl bg-white/80 backdrop-blur-sm
-      shadow-lg border border-secondary/40 
+      p-5 sm:p-6
+      w-64 sm:w-72
+      rounded-xl bg-white/80 backdrop-blur-sm
+      shadow-lg border border-secondary/40
       hover:shadow-primary/40 hover:-translate-y-1
       transition duration-300 cursor-pointer
       whitespace-normal
@@ -120,20 +122,20 @@ const TestimonialCard = ({ testimonial }) => (
       ))}
     </div>
 
-    <p className="text-slate-600 text-sm my-5 leading-relaxed whitespace-normal wrap-break-word">
+    <p className="text-slate-600 text-sm my-4 sm:my-5 leading-relaxed break-words">
       “{testimonial.content}”
     </p>
 
-    <hr className="mb-5 border-secondary/30" />
+    <hr className="mb-4 sm:mb-5 border-secondary/30" />
 
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-3 sm:gap-4">
       <img
         src={testimonial.image}
         alt={testimonial.name}
-        className="w-12 h-12 rounded-full object-cover border border-secondary/50"
+        className="w-11 h-11 sm:w-12 sm:h-12 rounded-full object-cover border border-secondary/50"
       />
       <div className="text-sm text-slate-700">
-        <h3 className="font-medium">{testimonial.name}</h3>
+        <h3 className="font-medium leading-tight">{testimonial.name}</h3>
         <p className="text-xs text-secondary">{testimonial.title}</p>
       </div>
     </div>

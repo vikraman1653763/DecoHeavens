@@ -45,18 +45,16 @@ const Services = () => {
   ];
 
   return (
-    
-    <section className="max-w-6xl mx-auto py-20 px-4 sm:px-4 ">
-      <h2 className="text-3xl md:text-4xl  text-primary text-center mb-3 font-yatra">
+    <section className="max-w-6xl mx-auto py-16 md:py-20 px-4">
+      <h2 className="text-3xl md:text-4xl text-primary text-center mb-3 font-yatra">
         Our Services
       </h2>
-      <p className="text-center text-slate-600 max-w-2xl mx-auto mb-12">
+      <p className="text-center text-slate-600 max-w-2xl mx-auto mb-10 md:mb-12 text-sm sm:text-base">
         From unforgettable celebrations to beautiful homes and expressive wall
         art, we bring creativity and craftsmanship to every project we take on.
       </p>
 
-      {/* items-stretch makes all grid children equal height */}
-      <div className="grid gap-10 md:grid-cols-3 items-stretch">
+      <div className="grid gap-8 sm:gap-10 md:grid-cols-3 items-stretch">
         {services.map((service, idx) => (
           <motion.div
             key={idx}
@@ -68,12 +66,8 @@ const Services = () => {
               delay: idx * 0.15,
               ease: "easeInOut",
             }}
-            className="relative group h-full" // h-full so wrapper matches tallest card
+            className="relative group h-full"
           >
-            {/* Hover-reveal button */}
-           
-
-            {/* Card with fixed image height + flex layout */}
             <div
               className="
                 bg-white rounded-3xl shadow-md hover:shadow-xl
@@ -81,8 +75,8 @@ const Services = () => {
                 flex flex-col h-full
               "
             >
-              {/* Image (fixed height for all cards) */}
-              <div className="overflow-hidden h-80">
+              {/* Image */}
+              <div className="overflow-hidden h-64 sm:h-72 md:h-80">
                 <img
                   src={service.img}
                   alt={service.title}
@@ -90,36 +84,37 @@ const Services = () => {
                 />
               </div>
 
-              {/* Content fills remaining height */}
-              <div className="p-6 flex flex-col flex-1 justify-between">
+              {/* Content */}
+              <div className="p-6 flex flex-col flex-1">
                 <h3 className="text-xl font-semibold text-primary mb-2 font-dance">
                   {service.title}
                 </h3>
-                <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                <p className="text-slate-600 text-sm leading-relaxed mb-5">
                   {service.desc}
                 </p>
- <button
-              onClick={() => navigate(service.link)}
-              className="
-               
-                px-4 py-2 rounded-full text-xs md:text-sm font-medium
-                bg-primary text-white shadow-lg
-               -translate-y-3 pointer-events-none
-                group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto
-                transition-all duration-300
-              "
-            >
-              Explore more →
-            </button>
-                {/* Make list take remaining space nicely */}
-                {/* <ul className="text-slate-700 text-sm space-y-1 mt-auto">
-                  {service.points.map((point, i) => (
-                    <li key={i} className="flex gap-2 items-start">
-                      <span className="text-secondary font-bold">•</span>
-                      {point}
-                    </li>
-                  ))}
-                </ul> */}
+
+                {/* CTA
+                    - Mobile: always visible + clickable
+                    - Desktop: hover-reveal (unchanged behavior)
+                */}
+                <button
+                  onClick={() => navigate(service.link)}
+                  className="
+                    mt-auto
+                    px-4 py-2 rounded-full text-xs md:text-sm font-medium
+                    bg-primary text-white shadow-lg
+                    w-fit
+
+                    opacity-100 translate-y-0 pointer-events-auto
+                    md:opacity-0 md:-translate-y-3 md:pointer-events-none
+                    md:group-hover:opacity-100 md:group-hover:translate-y-0 md:group-hover:pointer-events-auto
+                    transition-all duration-300
+                  "
+                >
+                  Explore more →
+                </button>
+
+                {/* If you want points back on mobile too, tell me and I’ll format it cleanly */}
               </div>
             </div>
           </motion.div>
