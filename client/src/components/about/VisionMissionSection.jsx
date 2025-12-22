@@ -38,7 +38,9 @@ const VisionMissionSection = () => {
           </p>
 
           <ul className="space-y-2 list-disc list-inside text-base font-normal text-left mx-auto lg:mx-0 max-w-xl">
-            <li>Create personalized designs that reflect every client’s story</li>
+            <li>
+              Create personalized designs that reflect every client’s story
+            </li>
             <li>Blend traditional cultural detailing with modern aesthetics</li>
             <li>Ensure transparent pricing and smooth execution</li>
             <li>Deliver quality craftsmanship with attention to detail</li>
