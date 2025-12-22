@@ -1,18 +1,17 @@
 "use client";
 
 import React from "react";
-
 import { IoCheckmarkDoneCircleSharp } from "react-icons/io5";
 import { FaUserFriends } from "react-icons/fa";
 import { RiCustomerService2Fill } from "react-icons/ri";
 import { ImLocation2 } from "react-icons/im";
+import { NumberTicker } from "../ui/number-ticker";
 
 const EventStats = () => {
-  
-
   const stats = [
     {
-      value: "250+",
+      value: 162,
+      suffix: "+",
       label: "Events Executed",
       Icon: IoCheckmarkDoneCircleSharp,
       blob: (
@@ -20,7 +19,8 @@ const EventStats = () => {
       ),
     },
     {
-      value: "180+",
+      value: 50,
+      suffix: "+",
       label: "Happy Clients",
       Icon: FaUserFriends,
       blob: (
@@ -28,7 +28,8 @@ const EventStats = () => {
       ),
     },
     {
-      value: "30+",
+      value: 30,
+      suffix: "+",
       label: "Team Members",
       Icon: RiCustomerService2Fill,
       blob: (
@@ -36,7 +37,8 @@ const EventStats = () => {
       ),
     },
     {
-      value: "40+",
+      value: 40,
+      suffix: "+",
       label: "Venues Covered",
       Icon: ImLocation2,
       blob: (
@@ -47,34 +49,37 @@ const EventStats = () => {
 
   return (
     <section className="text-gray-600 body-font">
-      <div className="container px-5 py-24 mx-auto">
+      <div className="container px-4 sm:px-5 py-16 md:py-24 mx-auto">
         {/* Heading */}
-        <div className="flex flex-col text-center w-full mb-20">
-          <h2 className="sm:text-4xl text-2xl font-bold mb-4 text-primary font-yatra">
-            Our Journey 
+        <div className="flex flex-col text-center w-full mb-10 md:mb-20">
+          <h2 className="text-2xl sm:text-4xl font-bold mb-4 text-primary font-yatra">
+            Our Journey
           </h2>
-          <p className="lg:w-1/2 mx-auto leading-relaxed text-base">
+          <p className="lg:w-1/2 mx-auto leading-relaxed text-sm sm:text-base">
             From intimate celebrations to large-scale events, these numbers
             reflect our experience, creativity, and flawless execution.
           </p>
         </div>
 
         {/* Stats */}
-        <div className="flex flex-wrap -m-4 text-center">
-          {stats.map(({ value, label, Icon, blob }, index) => (
+        <div className=" flex flex-wrap -m-4 text-center">
+          {stats.map(({ value, suffix, label, Icon, blob }, index) => (
             <div
               key={index}
-              className="p-4 md:w-1/4 sm:w-1/2 w-full"
+              className="p-4 w-[49%] md:w-1/4"
               data-aos="fade-up"
               data-aos-delay={index * 200}
             >
-              <div className="px-6 py-8 rounded-lg relative">
-                {/* Blob Background */}
+              <div className="px-6 py-8 rounded-lg relative  ">
+                {/* Blob */}
                 <svg
                   viewBox="0 0 200 200"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
-                             w-80 h-80 drop-shadow-[0px_15px_10px_rgba(0,0,0,0.35)]"
+                  className="
+                    absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+                    w-50 h-50 sm:w-72 sm:h-72 md:w-80 md:h-80
+                    drop-shadow-[0px_15px_10px_rgba(0,0,0,0.35)]
+                  "
                 >
                   <path
                     fill="#C65A2E"
@@ -84,13 +89,20 @@ const EventStats = () => {
                 </svg>
 
                 {/* Icon */}
-                <Icon className="relative z-10 mx-auto mb-3 text-5xl text-white" />
+                <Icon className="relative z-10 mx-auto mb-3 text-4xl sm:text-5xl text-white" />
 
-                {/* Text */}
-                <h3 className="title-font font-medium text-3xl text-white relative z-10">
-                  {value}
+                {/* Number */}
+                <h3 className="relative z-10 flex items-center justify-center text-3xl sm:text-4xl font-medium text-white gap-1">
+                  <NumberTicker
+                    value={value}
+                    decimalPlaces={0}
+                    className="text-3xl sm:text-4xl text-white font-yatra"
+                  />
+                  <span>{suffix}</span>
                 </h3>
-                <p className="leading-relaxed text-white relative z-10">
+
+                {/* Label */}
+                <p className="leading-relaxed text-white relative z-10 text-sm sm:text-base">
                   {label}
                 </p>
               </div>

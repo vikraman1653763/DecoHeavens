@@ -5,6 +5,9 @@ import { IoIosClose } from "react-icons/io";
 
 const TiltCard = ({ children, className = "" }) => {
   const handleMove = (e) => {
+    // ✅ Disable tilt on mobile / touch screens
+    if (typeof window !== "undefined" && window.innerWidth < 768) return;
+
     const card = e.currentTarget;
     const rect = card.getBoundingClientRect();
 
@@ -22,6 +25,7 @@ const TiltCard = ({ children, className = "" }) => {
   };
 
   const handleLeave = (e) => {
+    if (typeof window !== "undefined" && window.innerWidth < 768) return;
     e.currentTarget.style.transform = `translateZ(0) rotateX(0deg) rotateY(0deg)`;
   };
 
@@ -53,8 +57,6 @@ const InteriorGallery = () => {
       slides: [
         "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1400&q=80",
         "https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1400&q=80",
-
-        // added
         "https://images.unsplash.com/photo-1616047006789-b7af5afb8c20?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://plus.unsplash.com/premium_photo-1733248818744-17b6c632684f?q=80&w=1121&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://plus.unsplash.com/premium_photo-1661780042612-aebf87ce09ce?q=80&w=822&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -64,7 +66,6 @@ const InteriorGallery = () => {
         "https://plus.unsplash.com/premium_photo-1673014201877-64e88f4b5542?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       ],
     },
-
     {
       cover: {
         src: "https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=800&q=80",
@@ -75,13 +76,10 @@ const InteriorGallery = () => {
         "https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1400&q=80",
         "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80",
         "https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=1400&q=80",
-
-        // added (bderoom + bedroom)
         "https://images.unsplash.com/photo-1600493504483-8df7098b5792?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://cdn.pixabay.com/photo/2019/04/30/08/07/bedroom-4167971_1280.jpg",
       ],
     },
-
     {
       cover: {
         src: "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=1200&q=80",
@@ -94,8 +92,6 @@ const InteriorGallery = () => {
         "https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1400&q=80",
         "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1400&q=80",
         "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80",
-
-        // added
         "https://images.pexels.com/photos/7746072/pexels-photo-7746072.jpeg",
         "https://images.pexels.com/photos/6021777/pexels-photo-6021777.jpeg",
         "https://images.pexels.com/photos/35189705/pexels-photo-35189705.jpeg",
@@ -105,7 +101,6 @@ const InteriorGallery = () => {
         "https://cdn.pixabay.com/photo/2016/01/31/14/32/architecture-1171462_1280.jpg",
       ],
     },
-
     {
       cover: {
         src: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
@@ -116,8 +111,6 @@ const InteriorGallery = () => {
         "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1400&q=80",
         "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80",
         "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1400&q=80",
-
-        // added
         "https://images.unsplash.com/photo-1706074740295-d7a79c079562?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1706074797611-a02f9ed06439?q=80&w=1156&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1667646590380-670b53b8c393?q=80&w=933&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -125,7 +118,6 @@ const InteriorGallery = () => {
         "https://images.unsplash.com/photo-1600765727005-d189ea57a894?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       ],
     },
-
     {
       cover: {
         src: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
@@ -135,15 +127,12 @@ const InteriorGallery = () => {
       slides: [
         "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1400&q=80",
         "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1400&q=80",
-
-        // added
         "https://images.unsplash.com/photo-1644096922601-80aa39eff1d6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://plus.unsplash.com/premium_photo-1723489681852-e8fcb02439fc?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1400&q=80",
         "https://images.unsplash.com/photo-1586999768265-24af89630739?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       ],
     },
-
     {
       cover: {
         src: "https://images.unsplash.com/photo-1600214859516-98999dba7cf1?auto=format&fit=crop&w=800&q=80",
@@ -153,12 +142,10 @@ const InteriorGallery = () => {
       slides: [
         "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=1400&q=80",
         "https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?auto=format&fit=crop&w=1400&q=80",
-        // added
         "https://images.pexels.com/photos/1648768/pexels-photo-1648768.jpeg?_gl=1*c7wiuu*_ga*MTEwMzUzOTIyMy4xNzY1ODgwOTQy*_ga_8JE65Q40S6*czE3NjU5NjQ2MDQkbzIkZzEkdDE3NjU5NjY0ODMkajYwJGwwJGgw",
         "https://images.unsplash.com/photo-1693034433366-57fbb0286641?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1687946803051-51da173a9f55?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1721395288477-b546804ce392?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-
         "https://plus.unsplash.com/premium_photo-1684980181424-97bd193d2926?q=80&w=1183&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1600214859516-98999dba7cf1?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1691751941020-5f0bced88ae7?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -202,7 +189,7 @@ const InteriorGallery = () => {
                  bg-white/90 backdrop-blur 
                  border border-secondary/40 
                  text-gray-700 font-medium"
-      style={{ transform: "translateZ(30px)" }} // tag pops forward
+      style={{ transform: "translateZ(30px)" }}
     >
       {text}
     </span>
@@ -210,14 +197,14 @@ const InteriorGallery = () => {
 
   return (
     <section className="text-gray-600 body-font font-poppins">
-      <div className="container px-5 py-24 mx-auto flex flex-wrap">
-        {/* Header */}
-        <div className="flex flex-row  w-full mb-20 flex-nowrap gap-4  justify-left items-center ">
-          <AnimatedGradientText className="sm:text-5xl text-left  w-fit text-3xl font-dance title-font">
+      <div className="container px-5 py-6 md:py-24 mx-auto flex flex-wrap">
+        {/* ✅ Header (responsive) */}
+        <div className="w-full mb-10 md:mb-20 flex flex-col md:flex-row gap-4 md:gap-6 md:items-center">
+          <AnimatedGradientText className="text-3xl sm:text-4xl md:text-5xl text-left w-fit font-dance title-font">
             Inspiration Gallery
           </AnimatedGradientText>
 
-          <p className="lg:pl-6 leading-relaxed text-base text-gray-700 w-1/2">
+          <p className="leading-relaxed text-sm sm:text-base text-gray-700 md:w-1/2">
             Sample references to showcase styles we can design and execute.
             We’ll replace these with your actual project photos once available.
           </p>
@@ -226,12 +213,12 @@ const InteriorGallery = () => {
         {/* Gallery Grid */}
         <div
           className="flex flex-wrap md:-m-2 -m-1 w-full items-stretch"
-          style={{ perspective: "1200px" }} // depth for tilt
+          style={{ perspective: "1200px" }}
         >
           {/* Left Column */}
-          <div className="flex flex-wrap w-1/2 h-full">
-            <div className="md:p-2 p-1 w-1/2">
-              <TiltCard className="h-full">
+          <div className="flex flex-wrap w-full gap-3 sm:gap-0 md:w-1/2 sm:h-full">
+            <div className="md:p-2 p-1 w-full md:w-1/2">
+              <TiltCard className="sm:h-full ">
                 <div
                   className="relative w-full h-full overflow-hidden rounded-lg cursor-pointer"
                   style={{
@@ -240,13 +227,11 @@ const InteriorGallery = () => {
                   onClick={() => openModal(imageSets[0].slides, 0)}
                   role="button"
                   tabIndex={0}
-                  onKeyDown={(e) =>
-                    e.key === "Enter" && openModal(imageSets[0].slides, 0)
-                  }
+                  onKeyDown={(e) => e.key === "Enter" && openModal(imageSets[0].slides, 0)}
                 >
                   <img
                     alt={imageSets[0].cover.alt}
-                    className="w-full h-full object-cover object-center block transition-transform duration-300 hover:scale-[1.04]"
+                    className="w-full h-56 sm:h-64 md:h-full object-cover object-center block transition-transform duration-300 hover:scale-[1.04]"
                     src={imageSets[0].cover.src}
                     loading="lazy"
                     style={{ transform: "translateZ(10px)" }}
@@ -256,20 +241,18 @@ const InteriorGallery = () => {
               </TiltCard>
             </div>
 
-            <div className="md:p-2 p-1 w-1/2">
+            <div className="md:p-2 p-1 w-full md:w-1/2">
               <TiltCard className="h-full">
                 <div
                   className="relative w-full h-full overflow-hidden rounded-lg cursor-pointer"
                   onClick={() => openModal(imageSets[1].slides, 0)}
                   role="button"
                   tabIndex={0}
-                  onKeyDown={(e) =>
-                    e.key === "Enter" && openModal(imageSets[1].slides, 0)
-                  }
+                  onKeyDown={(e) => e.key === "Enter" && openModal(imageSets[1].slides, 0)}
                 >
                   <img
                     alt={imageSets[1].cover.alt}
-                    className="w-full h-full object-cover object-center block transition-transform duration-300 hover:scale-[1.04]"
+                    className="w-full h-56 sm:h-64 md:h-full object-cover object-center block transition-transform duration-300 hover:scale-[1.04]"
                     src={imageSets[1].cover.src}
                     loading="lazy"
                     style={{ transform: "translateZ(10px)" }}
@@ -286,13 +269,11 @@ const InteriorGallery = () => {
                   onClick={() => openModal(imageSets[2].slides, 0)}
                   role="button"
                   tabIndex={0}
-                  onKeyDown={(e) =>
-                    e.key === "Enter" && openModal(imageSets[2].slides, 0)
-                  }
+                  onKeyDown={(e) => e.key === "Enter" && openModal(imageSets[2].slides, 0)}
                 >
                   <img
                     alt={imageSets[2].cover.alt}
-                    className="w-full h-full object-cover object-center block transition-transform duration-300 hover:scale-[1.04]"
+                    className="w-full h-64 sm:h-72 md:h-full object-cover object-center block transition-transform duration-300 hover:scale-[1.04]"
                     src={imageSets[2].cover.src}
                     loading="lazy"
                     style={{ transform: "translateZ(10px)" }}
@@ -304,7 +285,7 @@ const InteriorGallery = () => {
           </div>
 
           {/* Right Column */}
-          <div className="flex flex-wrap w-1/2 h-full">
+          <div className="flex flex-wrap w-full md:w-1/2 sm:h-full">
             <div className="md:p-2 p-1 w-full">
               <TiltCard className="h-full">
                 <div
@@ -312,13 +293,11 @@ const InteriorGallery = () => {
                   onClick={() => openModal(imageSets[3].slides, 0)}
                   role="button"
                   tabIndex={0}
-                  onKeyDown={(e) =>
-                    e.key === "Enter" && openModal(imageSets[3].slides, 0)
-                  }
+                  onKeyDown={(e) => e.key === "Enter" && openModal(imageSets[3].slides, 0)}
                 >
                   <img
                     alt={imageSets[3].cover.alt}
-                    className="w-full h-full object-cover object-center block transition-transform duration-300 hover:scale-[1.04]"
+                    className="w-full h-64 sm:h-72 md:h-full object-cover object-center block transition-transform duration-300 hover:scale-[1.04]"
                     src={imageSets[3].cover.src}
                     loading="lazy"
                     style={{ transform: "translateZ(10px)" }}
@@ -328,20 +307,18 @@ const InteriorGallery = () => {
               </TiltCard>
             </div>
 
-            <div className="md:p-2 p-1 w-1/2">
+            <div className="md:p-2 p-1 w-full md:w-1/2">
               <TiltCard className="h-full">
                 <div
                   className="relative w-full h-full overflow-hidden rounded-lg cursor-pointer"
                   onClick={() => openModal(imageSets[4].slides, 0)}
                   role="button"
                   tabIndex={0}
-                  onKeyDown={(e) =>
-                    e.key === "Enter" && openModal(imageSets[4].slides, 0)
-                  }
+                  onKeyDown={(e) => e.key === "Enter" && openModal(imageSets[4].slides, 0)}
                 >
                   <img
                     alt={imageSets[4].cover.alt}
-                    className="w-full h-full object-cover object-center block transition-transform duration-300 hover:scale-[1.04]"
+                    className="w-full h-56 sm:h-64 md:h-full object-cover object-center block transition-transform duration-300 hover:scale-[1.04]"
                     src={imageSets[4].cover.src}
                     loading="lazy"
                     style={{ transform: "translateZ(10px)" }}
@@ -351,20 +328,18 @@ const InteriorGallery = () => {
               </TiltCard>
             </div>
 
-            <div className="md:p-2 p-1 w-1/2 ">
+            <div className="md:p-2 p-1 w-full md:w-1/2">
               <TiltCard className="h-full">
                 <div
                   className="relative w-full h-full overflow-hidden rounded-lg cursor-pointer"
                   onClick={() => openModal(imageSets[5].slides, 0)}
                   role="button"
                   tabIndex={0}
-                  onKeyDown={(e) =>
-                    e.key === "Enter" && openModal(imageSets[5].slides, 0)
-                  }
+                  onKeyDown={(e) => e.key === "Enter" && openModal(imageSets[5].slides, 0)}
                 >
                   <img
                     alt={imageSets[5].cover.alt}
-                    className="w-full h-full object-cover object-center block "
+                    className="w-full h-56 sm:h-64 md:h-full object-cover object-center block"
                     src={imageSets[5].cover.src}
                     loading="lazy"
                     style={{ transform: "translateZ(10px)" }}
@@ -394,11 +369,12 @@ const InteriorGallery = () => {
             <IoIosClose
               size={34}
               color="black"
-              className=" bg-white text-white rounded-full hover:bg-white/80"
+              className="bg-white text-white rounded-full hover:bg-white/80"
             />
           </button>
+
           <div
-            className="relative w-full  rounded-2xl  p-4 sm:p-6"
+            className="relative sm:w-full rounded-2xl p-0 sm:p-6"
             onMouseDown={(e) => e.stopPropagation()}
           >
             <TrandingSlider slides={modalSlides} initialSlide={activeIndex} />

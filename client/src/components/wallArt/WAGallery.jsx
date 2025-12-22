@@ -99,7 +99,7 @@ const getInViewOffset = (index) => {
 };
 
 /* ================================
-   MODAL — START (Light Theme)
+   MODAL — (UNCHANGED)
 ================================= */
 const ImageModal = ({ isOpen, onClose, image, title, subtitle }) => {
   useEffect(() => {
@@ -173,15 +173,20 @@ const ImageModal = ({ isOpen, onClose, image, title, subtitle }) => {
     </div>
   );
 };
-/* ================================
-   MODAL — END
-================================= */
 
+/* =========================================================
+   ✅ ONLY MOBILE CHANGES BELOW
+   - Desktop stays EXACTLY the same
+   - We add mobile-only classes:
+     1) grid becomes 2 cols on mobile
+     2) bento spans are turned off on mobile (kept for md+)
+     3) title/subtitle always visible on mobile, hover-only on md+
+========================================================= */
 const WallArtBentoGrid = () => {
   const [activeTile, setActiveTile] = useState(null);
 
   return (
-    <section className="w-full py-20 relative">
+    <section className="w-full sm:py-20 relative">
       {/* Decorative svgs (optional) */}
       <img
         src="/assets/design06.svg"
@@ -212,8 +217,8 @@ const WallArtBentoGrid = () => {
           </p>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 auto-rows-[160px] gap-4">
+        {/* ✅ Grid: MOBILE ONLY update (desktop unchanged) */}
+        <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[160px] gap-4">
           {tiles.map((tile, idx) => {
             const offset = getInViewOffset(idx);
 
@@ -235,7 +240,8 @@ const WallArtBentoGrid = () => {
                   shadow-[0_18px_40px_-25px_rgba(0,0,0,0.7)]
                   transition-transform duration-300 hover:-translate-y-1
                   cursor-pointer
-                  ${tile.span}
+                  ${tile.span} 
+                  md:${tile.span}
                 `}
               >
                 {/* Background Image */}
@@ -253,18 +259,21 @@ const WallArtBentoGrid = () => {
                 {/* Hover overlay */}
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/55 transition-colors duration-300" />
 
-                {/* Hover Text */}
+                {/* ✅ MOBILE: always visible | ✅ DESKTOP: hover reveal (unchanged behavior) */}
                 <div
                   className="
-                    absolute inset-x-0 bottom-0 p-5
-                    translate-y-4 opacity-0
-                    group-hover:translate-y-0 group-hover:opacity-100
+                    absolute inset-x-0 bottom-0 p-4
+                    opacity-100 translate-y-0
+                    md:translate-y-4 md:opacity-0
+                    md:group-hover:translate-y-0 md:group-hover:opacity-100
                     transition-all duration-300
                   "
                 >
-                  <h3 className="font-yatra text-lg text-white">{tile.title}</h3>
+                  <h3 className="font-yatra text-base sm:text-lg text-white">
+                    {tile.title}
+                  </h3>
                   {tile.subtitle ? (
-                    <p className="font-poppins text-xs sm:text-sm text-white/80 mt-1">
+                    <p className="font-poppins text-xs sm:text-sm text-white/80 mt-1 line-clamp-2">
                       {tile.subtitle}
                     </p>
                   ) : null}

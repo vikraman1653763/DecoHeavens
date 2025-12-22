@@ -16,7 +16,7 @@ import TimelineDot from "@mui/lab/TimelineDot";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 
 // MUI Core
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 
 // Icons
 import { HiOutlineSparkles } from "react-icons/hi2";
@@ -33,7 +33,6 @@ const PROCESS = [
     desc: "Share your wall photos, size, and preferred style. We recommend themes, palettes, and the right finish for your space.",
     icon: <HiOutlineSparkles size={18} />,
     dotColor: "#ff6b35",
-    // optional better crop (portrait-ish)
     img: "https://images.unsplash.com/photo-1523726491678-bf852e717f6a?q=80&w=700&h=900&auto=format&fit=crop",
   },
   {
@@ -63,36 +62,35 @@ const PROCESS = [
 ];
 
 export default function WallArtProcessTimeline() {
+  const isMobile = useMediaQuery("(max-width: 600px)");
+
   React.useEffect(() => {
     AOS.init({
       once: true,
       duration: 900,
       easing: "ease-out-cubic",
-      offset: 120,
+      offset: isMobile ? 60 : 120, // ✅ smoother on mobile
     });
-  }, []);
+  }, [isMobile]);
 
   return (
-    <section className="w-full py-20">
+    <section className="w-full py-14 sm:py-20">
       <div className="max-w-6xl mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-12">
-          <p className="font-dance text-xl text-secondary">
-            Clear steps, smooth execution
-          </p>
-          <h2 className="font-yatra text-3xl sm:text-4xl text-primary mt-2">
-            Our Wall Art Process
-          </h2>
+        <div className="text-center mb-10 sm:mb-12">
+          <p className="font-dance text-xl text-secondary">Clear steps, smooth execution</p>
+          <h2 className="font-yatra text-3xl sm:text-4xl text-primary mt-2">Our Wall Art Process</h2>
           <p className="font-poppins text-sm sm:text-base text-neutral-600 mt-2">
             From first idea to final finish — simple, transparent, and guided.
           </p>
         </div>
 
         <Box sx={{ "& .MuiTimelineItem-root:before": { flex: 0, padding: 0 } }}>
-          <Timeline position="alternate">
+          {/* ✅ Mobile: single-column (right) | Desktop: alternate */}
+          <Timeline position={isMobile ? "right" : "alternate"}>
             {PROCESS.map((p, idx) => (
               <TimelineItem key={idx}>
-                {/* Step label */}
+                {/* Step label (desktop only) */}
                 <TimelineOppositeContent
                   sx={{
                     fontSize: 12,
@@ -109,37 +107,35 @@ export default function WallArtProcessTimeline() {
                   <TimelineDot
                     sx={{
                       bgcolor: p.dotColor,
-                      boxShadow:
-                        "0 0 0 6px rgba(255,255,255,0.75), 0 10px 25px -15px rgba(0,0,0,0.45)",
+                      boxShadow: "0 0 0 6px rgba(255,255,255,0.75), 0 10px 25px -15px rgba(0,0,0,0.45)",
                     }}
                   >
                     {p.icon}
                   </TimelineDot>
 
                   {idx !== PROCESS.length - 1 && (
-                    <TimelineConnector
-                      sx={{ backgroundColor: "#cad5e2", width: "2px" }}
-                    />
+                    <TimelineConnector sx={{ backgroundColor: "#cad5e2", width: "2px" }} />
                   )}
                 </TimelineSeparator>
 
                 {/* Card */}
-                <TimelineContent sx={{ py: "12px", px: 2 }}>
+                <TimelineContent sx={{ py: "10px", px: { xs: 1, sm: 2 } }}>
                   <div
-                    data-aos={idx % 2 === 0 ? "fade-up-right" : "fade-up-left"}
-                    data-aos-delay={idx * 120}
+                    data-aos={isMobile ? "fade-up" : idx % 2 === 0 ? "fade-up-right" : "fade-up-left"}
+                    data-aos-delay={isMobile ? 0 : idx * 120}
                   >
                     <MagicCard className="rounded-2xl overflow-hidden">
                       <Box
                         sx={{
                           display: "flex",
-                          height: 210,
                           flexDirection: { xs: "column", sm: "row" },
                           backgroundColor: "#ffffff6e",
-                          maxWidth: 520,
+                          maxWidth: isMobile ? "100%" : 520,
+                          // ✅ let height grow on mobile (no cut)
+                          height: { xs: "auto", sm: 210 },
                         }}
                       >
-                        {/* ✅ Image column now stretches to full card height */}
+                        {/* Image */}
                         <Box
                           sx={{
                             width: { xs: "100%", sm: 220 },
@@ -154,7 +150,8 @@ export default function WallArtProcessTimeline() {
                             loading="lazy"
                             sx={{
                               width: "100%",
-                              height: "100%",
+                              // ✅ mobile aspect for nicer look
+                              height: { xs: 200, sm: "100%" },
                               objectFit: "cover",
                               display: "block",
                             }}
@@ -164,12 +161,13 @@ export default function WallArtProcessTimeline() {
                         {/* Content */}
                         <Box
                           sx={{
-                            p: 2,
+                            p: { xs: 1.75, sm: 2 },
                             display: "flex",
                             flexDirection: "column",
                             alignItems: "flex-start",
                           }}
                         >
+                          {/* Step label (mobile only) */}
                           <Typography
                             sx={{
                               display: { xs: "block", md: "none" },
@@ -209,7 +207,7 @@ export default function WallArtProcessTimeline() {
                             src="/assets/design07.svg"
                             alt=""
                             sx={{
-                              height: 55,
+                              height: { xs: 45, sm: 55 },
                               width: "auto",
                               mt: 1.5,
                               display: "block",

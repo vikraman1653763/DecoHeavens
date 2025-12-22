@@ -28,7 +28,7 @@ const ScrollVelocityInteriorShowcase = () => {
   const [paused, setPaused] = useState(false)
 
   return (
-    <section className="relative w-full overflow-hidden font-poppins py-10">
+    <section className="relative w-full overflow-hidden font-poppins py-0 sm:py-10">
       <div
         className="relative flex w-full flex-col items-center justify-center overflow-hidden"
         onMouseEnter={() => setPaused(true)}
@@ -47,7 +47,7 @@ const ScrollVelocityInteriorShowcase = () => {
                   height={170}
                   loading="lazy"
                   decoding="async"
-                  className="mx-4 inline-block h-100 w-104 rounded-2xl object-cover
+                  className="mx-4 inline-block w-50 h-50 sm:h-100 sm:w-104 rounded-2xl object-cover
                              border border-black/5 bg-white/70
                              shadow-md hover:shadow-xl transition-shadow duration-300"
                 />
@@ -72,7 +72,7 @@ const ScrollVelocityInteriorShowcase = () => {
                   height={170}
                   loading="lazy"
                   decoding="async"
-                  className="mx-4 inline-block h-100 w-104 rounded-2xl object-cover
+                  className="mx-4 inline-block w-50 h-50 sm:h-100 sm:w-104 rounded-2xl object-cover
                              border border-black/5 bg-white/70
                              shadow-md hover:shadow-xl transition-shadow duration-300"
                 />
@@ -81,7 +81,6 @@ const ScrollVelocityInteriorShowcase = () => {
           </div>
         </ScrollVelocityContainer>
 
-        {/* ❌ removed the left/right white fog gradient divs */}
       </div>
     </section>
   )

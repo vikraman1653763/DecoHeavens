@@ -62,7 +62,7 @@ const InteriorDesignCarousel = () => {
   };
 
   return (
-    <div className="relative w-full min-h-screen flex items-center justify-center px-4 py-10 overflow-hidden bg-black">
+    <div className="relative w-full sm:min-h-screen flex items-center justify-center pt-22 sm:pt-0 px-4 py-10 overflow-hidden bg-black">
       {/* ✅ Dynamic blurred background (based on active image) */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -73,24 +73,89 @@ const InteriorDesignCarousel = () => {
           transition={{ duration: 0.5 }}
           className="absolute inset-0"
         >
-          {/* Background image */}
           <div
-            className="absolute inset-0 scale-110 bg-center bg-cover blur-[2px] "
-            style={{
-              backgroundImage: `url(${slides[active]?.img})`,
-            }}
+            className="absolute inset-0 scale-110 bg-center bg-cover blur-[2px]"
+            style={{ backgroundImage: `url(${slides[active]?.img})` }}
           />
-
-          {/* Dark overlay to keep text readable */}
           <div className="absolute inset-0 bg-black/55" />
-
-          {/* Extra vignette (optional) */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70" />
         </motion.div>
       </AnimatePresence>
 
-      {/* Foreground content */}
-      <div className="relative z-10 w-full max-w-6xl flex items-center justify-center gap-5">
+      {/* ---------------- MOBILE LAYOUT (< md) ---------------- */}
+      <div className="relative z-10 w-full max-w-6xl md:hidden">
+        {/* Active slide */}
+        <div className="w-full">
+          <motion.div
+            key={slides[active]?.img}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.35, ease: "easeOut" }}
+            className="relative overflow-hidden rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.55)]"
+          >
+            <div className="relative h-[420px] w-full">
+              <img
+                src={slides[active]?.img}
+                alt={slides[active]?.title}
+                className="absolute inset-0 w-full h-full object-cover"
+                draggable={false}
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/25 to-transparent" />
+              <div className="absolute left-5 right-5 bottom-5">
+                <h2 className="text-white text-2xl font-extrabold tracking-tight drop-shadow font-yatra">
+                  {slides[active]?.title.toUpperCase()}
+                </h2>
+                <p className="mt-2 text-white/85 text-sm leading-relaxed">
+                  {slides[active]?.des}
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Dots */}
+          <div className="flex items-center justify-center gap-2 mt-5">
+            {slides.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => onSelect(i)}
+                aria-label={`Go to slide ${i + 1}`}
+                className={[
+                  "h-2.5 rounded-full transition-all",
+                  i === active ? "w-7 bg-white" : "w-2.5 bg-white/40",
+                ].join(" ")}
+              />
+            ))}
+          </div>
+
+          {/* Thumbnails row */}
+          <div className="mt-5 flex gap-3 overflow-x-auto pb-2 -mx-1 px-1">
+            {slides.map((s, idx) => (
+              <button
+                key={idx}
+                type="button"
+                onClick={() => onSelect(idx)}
+                className={[
+                  "shrink-0 relative overflow-hidden rounded-xl border",
+                  idx === active
+                    ? "border-white/70"
+                    : "border-white/20 opacity-80",
+                ].join(" ")}
+              >
+                <img
+                  src={s.img}
+                  alt={s.title}
+                  className="h-16 w-24 object-cover"
+                  draggable={false}
+                />
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ---------------- DESKTOP LAYOUT (md+) - UNCHANGED ---------------- */}
+      <div className="relative z-10 w-full max-w-6xl hidden md:flex items-center justify-center gap-5">
         {slides.map((s, idx) => {
           const isActive = idx === active;
 
@@ -109,7 +174,6 @@ const InteriorDesignCarousel = () => {
               animate={{ width: isActive ? 720 : 120 }}
               transition={{ duration: 0.65, ease: "easeInOut" }}
             >
-              {/* Image */}
               <img
                 src={s.img}
                 alt={s.title}
@@ -117,10 +181,8 @@ const InteriorDesignCarousel = () => {
                 draggable={false}
               />
 
-              {/* Overlay */}
               <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent" />
 
-              {/* Vertical title (inactive cards) */}
               {!isActive && (
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="-rotate-90 translate-y-[300%]">
@@ -131,7 +193,6 @@ const InteriorDesignCarousel = () => {
                 </div>
               )}
 
-              {/* Active content */}
               <AnimatePresence>
                 {isActive && (
                   <motion.div

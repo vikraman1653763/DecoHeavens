@@ -55,60 +55,88 @@ export default function DraggableEventCard() {
   ];
 
   return (
-    <div className="relative flex flex-col items-center justify-center">
+    <div className="relative flex flex-col items-center justify-center ">
       <div className="text-center p-6 z-40">
-        <h2 className="text-4xl font-yatra font-semibold text-primary">
+        <h2 className="text-3xl sm:text-4xl font-yatra font-semibold text-primary">
           Events Gallery
         </h2>
         <p className="mt-3 max-w-xl text-sm text-neutral-600 dark:text-neutral-300">
-          a glimpse of the celebrations, decor, and experiences we design.
+          A glimpse of the celebrations, decor, and experiences we design.
         </p>
       </div>
 
-      <DraggableCardContainer className="relative flex h-200 p-10 w-full items-center justify-center overflow-clip bg-white">
-        {/* ✅ BACKGROUND CENTER TEXT + RESET (BEHIND CARDS) */}
-        <div className="absolute top-1/2 left-1/2 z-0 -translate-x-1/2 -translate-y-1/2 text-center px-6">
-          <p className="text-sm md:text-6xl font-dance font-extrabold text-black/10 mb-4">
-            We plan weddings, birthdays, corporate events, and decor <br />
-            want to see them again?
-          </p>
-
-          <button
-            type="button"
-            onClick={() => setResetKey((k) => k + 1)}
-            className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white shadow-lg hover:scale-105 active:scale-95 transition"
-            aria-label="Reset cards"
-            title="Reset"
-          >
-            <CiRedo className="text-2xl" />
-          </button>
-        </div>
-
-        {/* ✅ PILE WRAPPER: DO NOT CAPTURE POINTER EVENTS */}
-        <div className="absolute left-1/2 z-10 -translate-x-[45%] translate-y-1/2 md:translate-y-16 w-full h-full pointer-events-none">
-          {items.map((item, index) => (
-            <DraggableCardBody
+      {/* ✅ MOBILE: simple swipe gallery (does not affect desktop) */}
+      <div className="w-full md:hidden px-4 pb-10">
+        <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-3">
+          {items.map((item) => (
+            <div
               key={item.title}
-              className={`${item.className} pointer-events-auto`} // ✅ cards can drag
-              resetKey={resetKey}
-              index={index}
+              className="shrink-0 w-[260px] snap-center rounded-2xl bg-white shadow-md border border-slate-200 p-3"
             >
               <img
                 src={item.image}
                 alt={item.title}
-                className="pointer-events-none relative z-10 h-80 w-80 rounded-md object-cover"
+                className="h-56 w-full rounded-xl object-cover"
                 loading="lazy"
               />
-              <h3 className="mt-4 text-center text-2xl font-bold text-neutral-800  font-dance">
+              <h3 className="mt-3 text-center text-xl font-bold text-neutral-800 font-dance">
                 {item.title}
               </h3>
-              <p className="mt-1 text-center text-sm text-secondary ">
-                Tap & drag to explore
+              <p className="mt-1 text-center text-xs text-secondary">
+                Swipe to explore
               </p>
-            </DraggableCardBody>
+            </div>
           ))}
         </div>
-      </DraggableCardContainer>
+      </div>
+
+      {/* ✅ DESKTOP (md+): your original draggable pile UNCHANGED */}
+      <div className="hidden md:block w-full">
+        <DraggableCardContainer className="relative flex h-[620px] sm:h-[720px] md:h-[800px] p-10 w-full items-center justify-center overflow-clip bg-white">
+          {/* ✅ BACKGROUND CENTER TEXT + RESET (BEHIND CARDS) */}
+          <div className="absolute top-1/2 left-1/2 z-0 -translate-x-1/2 -translate-y-1/2 text-center px-6">
+            <p className="text-sm md:text-6xl font-dance font-extrabold text-black/10 mb-4">
+              We plan weddings, birthdays, corporate events, and decor <br />
+              want to see them again?
+            </p>
+
+            <button
+              type="button"
+              onClick={() => setResetKey((k) => k + 1)}
+              className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white shadow-lg hover:scale-105 active:scale-95 transition"
+              aria-label="Reset cards"
+              title="Reset"
+            >
+              <CiRedo className="text-2xl" />
+            </button>
+          </div>
+
+          {/* ✅ PILE WRAPPER */}
+          <div className="absolute left-1/2 z-10 -translate-x-[45%] translate-y-1/2 md:translate-y-16 w-full h-full pointer-events-none">
+            {items.map((item, index) => (
+              <DraggableCardBody
+                key={item.title}
+                className={`${item.className} pointer-events-auto`}
+                resetKey={resetKey}
+                index={index}
+              >
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="pointer-events-none relative z-10 h-80 w-80 rounded-md object-cover"
+                  loading="lazy"
+                />
+                <h3 className="mt-4 text-center text-2xl font-bold text-neutral-800 font-dance">
+                  {item.title}
+                </h3>
+                <p className="mt-1 text-center text-sm text-secondary">
+                  Tap & drag to explore
+                </p>
+              </DraggableCardBody>
+            ))}
+          </div>
+        </DraggableCardContainer>
+      </div>
     </div>
   );
 }

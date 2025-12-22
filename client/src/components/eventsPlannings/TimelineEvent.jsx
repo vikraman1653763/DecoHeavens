@@ -7,20 +7,22 @@ export default function TimelineEvent() {
       title: "Weddings",
       content: (
         <div>
-          <p className="mb-6 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
+          <p className="mb-5 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
             Engagement, haldi, sangeet, reception — we plan the full wedding flow
             with theme styling, decor, vendor coordination, and on-day management.
           </p>
-          <div className="grid grid-cols-2 gap-4">
+
+          {/* ✅ Mobile: 1 col | sm+: 2 col (desktop stays 2) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <img
               src="https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?q=80&w=1200&auto=format&fit=crop"
               alt="wedding planning"
-              className="h-28 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04)] md:h-44 lg:h-60"
+              className="h-40 sm:h-28 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04)] md:h-44 lg:h-60"
             />
             <img
               src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=1200&auto=format&fit=crop"
               alt="wedding decor"
-              className="h-28 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04)] md:h-44 lg:h-60"
+              className="h-40 sm:h-28 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04)] md:h-44 lg:h-60"
             />
           </div>
         </div>
@@ -30,20 +32,20 @@ export default function TimelineEvent() {
       title: "Cultural Functions",
       content: (
         <div>
-          <p className="mb-6 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
+          <p className="mb-5 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
             Traditional events planned with cultural accuracy — timing, guest
             flow, stage setup, rituals support, and seamless coordination.
           </p>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <img
               src="https://images.unsplash.com/photo-1606214174585-fe31582dc6ee?q=80&w=1200&auto=format&fit=crop"
               alt="cultural celebration"
-              className="h-28 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04)] md:h-44 lg:h-60"
+              className="h-40 sm:h-28 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04)] md:h-44 lg:h-60"
             />
             <img
               src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?q=80&w=1200&auto=format&fit=crop"
               alt="event gathering"
-              className="h-28 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04)] md:h-44 lg:h-60"
+              className="h-40 sm:h-28 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04)] md:h-44 lg:h-60"
             />
           </div>
         </div>
@@ -53,20 +55,20 @@ export default function TimelineEvent() {
       title: "Corporate Events",
       content: (
         <div>
-          <p className="mb-6 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
+          <p className="mb-5 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
             Product launches, team events, brand activations — professional
             planning with AV, staging, seating, and disciplined execution.
           </p>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <img
               src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200&auto=format&fit=crop"
               alt="corporate event"
-              className="h-28 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04)] md:h-44 lg:h-60"
+              className="h-40 sm:h-28 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04)] md:h-44 lg:h-60"
             />
             <img
               src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop"
               alt="team coordination"
-              className="h-28 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04)] md:h-44 lg:h-60"
+              className="h-40 sm:h-28 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04)] md:h-44 lg:h-60"
             />
           </div>
         </div>
@@ -76,20 +78,20 @@ export default function TimelineEvent() {
       title: "Private Celebrations",
       content: (
         <div>
-          <p className="mb-6 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
+          <p className="mb-5 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
             Birthdays, anniversaries, baby showers, housewarming — themed decor,
             custom setups, and stress-free coordination.
           </p>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <img
               src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=1200&auto=format&fit=crop"
               alt="birthday celebration"
-              className="h-28 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04)] md:h-44 lg:h-60"
+              className="h-40 sm:h-28 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04)] md:h-44 lg:h-60"
             />
             <img
               src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?q=80&w=1200&auto=format&fit=crop"
               alt="party gathering"
-              className="h-28 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04)] md:h-44 lg:h-60"
+              className="h-40 sm:h-28 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04)] md:h-44 lg:h-60"
             />
           </div>
         </div>
@@ -99,19 +101,20 @@ export default function TimelineEvent() {
       title: "Proposals & Surprises",
       content: (
         <div>
-          <p className="mb-6 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-           End-to-end planning of surprise setups and special moments—from concept and styling to timing and perfect execution.
+          <p className="mb-5 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
+            End-to-end planning of surprise setups and special moments—from
+            concept and styling to timing and perfect execution.
           </p>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <img
               src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?q=80&w=1200&auto=format&fit=crop"
               alt="romantic setup"
-              className="h-28 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04)] md:h-44 lg:h-60"
+              className="h-40 sm:h-28 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04)] md:h-44 lg:h-60"
             />
             <img
               src="https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?q=80&w=1200&auto=format&fit=crop"
               alt="celebration moment"
-              className="h-28 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04)] md:h-44 lg:h-60"
+              className="h-40 sm:h-28 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04)] md:h-44 lg:h-60"
             />
           </div>
         </div>
@@ -121,16 +124,17 @@ export default function TimelineEvent() {
 
   return (
     <div className="relative w-full overflow-clip">
-        <div className="max-w-7xl mx-auto  mt-15">
-        <h2 className="text-lg md:text-4xl text-primary dark:text-white max-w-4xl font-yatra">
-  Events We Plan & Execute
-</h2>
-<p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-4xl">
-  From intimate celebrations to large-scale events, here’s a look at the
-  experiences we thoughtfully plan, design, and deliver.
-</p>
-
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-[60px]">
+        <h2 className="text-2xl md:text-4xl text-primary dark:text-white max-w-4xl font-yatra">
+          Events We Plan & Execute
+        </h2>
+        <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-4xl mt-2">
+          From intimate celebrations to large-scale events, here’s a look at the
+          experiences we thoughtfully plan, design, and deliver.
+        </p>
       </div>
+
+      {/* Timeline component (kept as-is) */}
       <Timeline data={data} />
     </div>
   );

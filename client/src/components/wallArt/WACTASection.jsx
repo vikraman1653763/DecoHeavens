@@ -2,22 +2,40 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const WallArtCTASection = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <section className="w-full mt-12">
       <div className="max-w-7xl mx-auto px-4">
         <div className="bg-neutral-900 rounded-2xl overflow-hidden w-full">
-          <div className="grid md:grid-cols-2 items-center">
+          {/* ✅ MOBILE: image first | DESKTOP: unchanged */}
+          <div className="grid grid-cols-1 md:grid-cols-2 items-center">
             
+            {/* RIGHT IMAGE (mobile first) */}
+            <img
+              src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80"
+              alt="Wall art mural"
+              className="
+                w-full h-[220px] sm:h-[320px] md:h-full
+                object-cover
+              "
+            />
+
             {/* LEFT CONTENT */}
-            <div className="p-8 sm:p-10">
+            <div
+              className="
+                p-6 sm:p-8 md:p-10
+                text-center md:text-left
+              "
+            >
               <p className="font-dance text-primary/90 text-lg sm:text-xl">
                 Let your walls speak
               </p>
 
-              <h2 className="mt-2 sm:text-4xl text-2xl text-white leading-tight">
-                Transform Your <span className="font-yatra ">Space</span> with
+              <h2 className="mt-2 text-2xl sm:text-3xl md:text-4xl text-white leading-tight">
+                Transform Your{" "}
+                <span className="font-yatra">Space</span>{" "}
+                with
                 <span className="text-primary"> Custom Wall Art</span>
               </h2>
 
@@ -32,23 +50,22 @@ const WallArtCTASection = () => {
                 themes, and a clear quote tailored just for you.
               </p>
 
+              {/* ✅ MOBILE: full width button */}
               <button
-                    onClick={() => navigate("/contact")}
+                onClick={() => navigate("/contact")}
                 type="button"
-                className="px-7 py-3 mt-8 rounded-md text-sm font-poppins font-semibold
-                           text-white tracking-wide bg-primary hover:bg-primary/90
-                           transition"
+                className="
+                  mt-8 px-7 py-3 rounded-md
+                  w-fit sm:w-auto
+                  text-sm font-poppins font-semibold
+                  text-white tracking-wide
+                  bg-primary hover:bg-primary/90
+                  transition
+                "
               >
                 Get a Custom Wall Quote
               </button>
             </div>
-
-            {/* RIGHT IMAGE */}
-            <img
-              src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80"
-              alt="Wall art mural"
-              className="w-full h-full object-cover"
-            />
           </div>
         </div>
       </div>

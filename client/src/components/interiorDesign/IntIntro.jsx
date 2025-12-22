@@ -15,10 +15,10 @@ const InteriorIntro = () => {
   const [activeChip, setActiveChip] = useState("homes");
 
   return (
-    <section className="w-full py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-6 text-center">
+    <section className="w-full py-6 md:py-20 bg-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
         {/* Intro Text */}
-        <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
+        <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
           We craft functional and aesthetically pleasing{" "}
           <AnimatedGradientText>interiors</AnimatedGradientText> that reflect your
           lifestyle and purpose.{" "}
@@ -29,20 +29,46 @@ const InteriorIntro = () => {
           spaces into inspiring environments.
         </p>
 
-        {/* Chips as Buttons */}
-        <div className="flex justify-center flex-wrap gap-3 mt-8">
-          {["Homes", "Offices", "Commercial"].map((item, index) => (
-            <span
-              key={index}
-              className="px-5 py-2 rounded-full border border-secondary text-sm font-medium text-gray-100 bg-secondary transition"
-            >
-              {item}
-            </span>
-          ))}
+        {/* Chips as Buttons (clickable + responsive) */}
+        <div className="mt-8">
+          {/* ✅ mobile: horizontal scroll | md+: centered wrap */}
+          <div
+            className="
+              flex gap-3
+              overflow-x-auto md:overflow-visible
+              md:justify-center md:flex-wrap
+              px-1 -mx-1
+              pb-2
+              scrollbar-hide
+            "
+          >
+            {chipItems.map((chip) => {
+              const isActive = chip.id === activeChip;
+
+              return (
+                <button
+                  key={chip.id}
+                  type="button"
+                  onClick={() => setActiveChip(chip.id)}
+                  className={[
+                    "shrink-0 whitespace-nowrap",
+                    "px-5 py-2 rounded-full text-sm font-medium transition",
+                    "border",
+                    isActive
+                      ? "bg-secondary text-white border-secondary"
+                      : "bg-white text-gray-700 border-gray-200 hover:border-secondary/60 hover:text-gray-900",
+                  ].join(" ")}
+                  aria-pressed={isActive}
+                >
+                  {chip.label}
+                </button>
+              );
+            })}
+          </div>
         </div>
 
-        {/* Video (Online reference) */}
-        <div className="mt-12 max-w-4xl mx-auto">
+        {/* Video */}
+        <div className="mt-10 md:mt-12 max-w-4xl mx-auto">
           <div className="relative w-full overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
             {/* 16:9 aspect ratio */}
             <div className="pt-[56.25%]" />
@@ -56,8 +82,7 @@ const InteriorIntro = () => {
             />
           </div>
 
-          {/* Optional caption */}
-          <p className="text-sm text-gray-500 mt-3">
+          <p className="text-sm text-gray-500 mt-3 px-2">
             Preview how we plan, visualize, and execute interiors—from 3D concept to handover.
           </p>
         </div>

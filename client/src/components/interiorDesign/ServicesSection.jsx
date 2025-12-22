@@ -89,23 +89,23 @@ const ServicesSection = () => {
     <section className="text-gray-600 body-font font-poppins">
       <div className="container px-5 mx-auto">
         {/* Header */}
-        <div className="flex flex-wrap w-full mb-16 items-end">
-          <div className="lg:w-1/2 w-full mb-6 lg:mb-0">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 w-full mb-10 sm:mb-16">
+          <div className="sm:w-1/2 w-full">
             <AnimatedGradientText className="sm:text-5xl text-3xl font-dance title-font">
               Our Services
             </AnimatedGradientText>
-            <p className="mt-3 text-gray-700 max-w-xl">
+            <p className="mt-3 text-gray-700 max-w-xl text-sm sm:text-base">
               Thoughtfully designed interior solutions—crafted, executed, and
               delivered with care.
             </p>
           </div>
 
-          <div className="lg:w-1/2 w-full flex lg:justify-end">
+          <div className="sm:w-1/2 w-full flex sm:justify-end">
             <motion.button
               onClick={goContact}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center rounded-full px-6 py-3 text-sm font-semibold
+              className=" mx-auto sm:mx-0 sm:w-auto inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold
                          bg-secondary text-white
                          shadow-lg shadow-secondary/25"
             >
@@ -120,7 +120,10 @@ const ServicesSection = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="
+            grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
+            gap-4 sm:gap-6
+          "
         >
           {services.map((service, index) => (
             <motion.div key={index} variants={item}>
@@ -129,22 +132,26 @@ const ServicesSection = () => {
                 onClick={goContact}
                 whileHover={{ y: -6 }}
                 whileTap={{ scale: 0.99 }}
-                className="text-left w-full h-full rounded-2xl border border-black/5
-                           bg-white/80 backdrop-blur
-                           shadow-md hover:shadow-xl transition-shadow duration-300
-                           focus:outline-none focus:ring-2 focus:ring-secondary/40"
+                className="
+                  text-left w-full h-full rounded-2xl border border-black/5
+                  bg-white/80 backdrop-blur
+                  shadow-md hover:shadow-xl transition-shadow duration-300
+                  focus:outline-none focus:ring-2 focus:ring-secondary/40
+                "
               >
-                <div className="p-6 flex flex-col h-full">
+                <div className="p-5 sm:p-6 flex flex-col h-full">
                   {/* Icon + Title */}
                   <div className="flex items-center gap-4 mb-4">
                     <div
-                      className="w-12 h-12 rounded-2xl grid place-items-center text-xl
-                                 bg-secondary/10
-                                 border border-secondary/20"
+                      className="
+                        w-11 h-11 sm:w-12 sm:h-12 rounded-2xl
+                        grid place-items-center text-xl
+                        bg-secondary/10 border border-secondary/20
+                      "
                     >
                       {service.icon}
                     </div>
-                    <h3 className="text-lg font-semibold text-gray-900">
+                    <h3 className="text-base sm:text-lg font-semibold text-gray-900">
                       {service.title}
                     </h3>
                   </div>
@@ -153,15 +160,15 @@ const ServicesSection = () => {
                   <ul className="space-y-2 text-sm text-gray-700 flex-1">
                     {service.points.map((point, idx) => (
                       <li key={idx} className="flex gap-2">
-                        <span className="mt-1 h-1.5 w-1.5 rounded-full bg-secondary shrink-0" />
+                        <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-secondary shrink-0" />
                         <span>{point}</span>
                       </li>
                     ))}
                   </ul>
 
                   {/* Footer */}
-                  <div className="mt-6 flex items-center justify-between">
-                    <span className="text-xs font-medium text-gray-500">
+                  <div className="mt-6 flex items-center justify-between gap-3">
+                    <span className="text-[11px] sm:text-xs font-medium text-gray-500">
                       Premium • Reliable • Timely
                     </span>
                     <span className="text-sm font-semibold text-secondary">
