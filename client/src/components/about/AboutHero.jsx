@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const AboutHero = () => {
   return (
-    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
+    <section className="relative pt-30 min-h-full sm:min-h-screen w-full flex items-center justify-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 flex items-center justify-center">
         {/* SVG reveal */}
@@ -12,7 +12,7 @@ const AboutHero = () => {
           src="/assets/design04.svg"
           alt=""
           aria-hidden="true"
-          className="w-[120%] sm:w-full max-w-6xl object-contain opacity-90"
+          className="w-full sm:max-w-6xl object-contain opacity-90"
           initial={{ opacity: 0, scale: 0.94, filter: "blur(14px)" }}
           animate={{ opacity: 0.9, scale: 1, filter: "blur(0px)" }}
           transition={{
@@ -80,7 +80,7 @@ const AboutHero = () => {
         </motion.p>
 
         <motion.div
-          className="mt-8 flex flex-col sm:flex-row gap-3 w-full sm:w-auto"
+          className="sm:mt-8 mt-5 flex flex-row gap-3 w-full sm:w-auto"
           variants={{
             hidden: { opacity: 0, y: 14 },
             show: { opacity: 1, y: 0 },
@@ -88,14 +88,14 @@ const AboutHero = () => {
         >
           <Link
             to="/contact"
-            className="px-7 py-3 rounded-2xl bg-secondary text-white font-semibold hover:opacity-95 transition w-full sm:w-auto"
+            className=" px-1 sm:px-7 py-3 rounded-2xl bg-secondary text-white font-semibold hover:opacity-95 transition w-full sm:w-auto"
           >
             Contact Us
           </Link>
 
           <Link
             to="/work"
-            className="px-7 py-3 rounded-2xl border border-slate-300 bg-white/60 backdrop-blur text-slate-800 font-semibold hover:bg-white transition w-full sm:w-auto"
+            className="px-1 sm:px-7 py-3 rounded-2xl border border-slate-300 bg-white/60 backdrop-blur text-slate-800 font-semibold hover:bg-white transition w-full sm:w-auto"
           >
             View Our Work
           </Link>

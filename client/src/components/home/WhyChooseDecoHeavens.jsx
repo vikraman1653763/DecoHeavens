@@ -92,7 +92,7 @@ const WhyChooseDecoHeavens = () => {
           </p>
 
           {/* Feature Cards */}
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
+          <div className="mt-4 sm:mt-8 grid gap-4  md:grid-cols-3">
             {features.map((feature, idx) => (
               <motion.div
                 key={idx}
@@ -119,7 +119,7 @@ const WhyChooseDecoHeavens = () => {
                   colorTo="#FECFEF"
                 />
 
-                <div className="h-full flex flex-col rounded-2xl bg-white/80 backdrop-blur-sm p-4 text-left">
+                <div className="h-full flex flex-col rounded-2xl bg-white/80 backdrop-blur-sm p-2  sm:p-4 text-left">
                   <div className="overflow-hidden rounded-xl border border-primary/20 mb-3">
                     <img
                       src={feature.img}

@@ -9,7 +9,7 @@ export default function Footer() {
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
       `}</style>
 
-      <footer className="px-6 md:px-16 lg:px-24 xl:px-32 w-full text-sm text-slate-600 bg-white pt-10 font-[Poppins]">
+      <footer className="px-6 md:px-16 lg:px-24 xl:px-32 w-full text-sm text-slate-600 bg-white pt-6 sm:pt-10 font-[Poppins]">
         {/* GRID SECTION */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-14">
           {/* COLUMN 1 – Logo + Name */}

@@ -4,7 +4,7 @@ import { AnimatedGradientText } from "../ui/animated-gradient-text";
 const VisionMissionSection = () => {
   return (
     <section className="bg-white">
-      <div className="gap-10 lg:gap-16 items-center py-10 lg:py-6 px-4 sm:px-6 mx-auto max-w-7xl lg:grid lg:grid-cols-2 lg:px-6">
+      <div className="gap-10 lg:gap-16 items-center py-6 px-4 sm:px-6 mx-auto max-w-7xl lg:grid lg:grid-cols-2 lg:px-6">
         {/* Text */}
         <div className="font-light text-slate-600 sm:text-lg text-center lg:text-left">
           <h2 className="mb-4 text-3xl sm:text-4xl tracking-tight font-semibold text-primary font-yatra">
@@ -48,7 +48,7 @@ const VisionMissionSection = () => {
         {/* Images */}
         <div className="grid grid-cols-2 gap-3 sm:gap-4 mt-8 lg:mt-0">
           <img
-            className="w-full rounded-2xl object-cover h-40 sm:h-56 lg:h-auto"
+            className="w-full rounded-2xl object-cover h-56 lg:h-auto"
             src="https://plus.unsplash.com/premium_photo-1684783847972-1b2406aa4cc8?q=80&w=800&auto=format&fit=crop"
             alt="Vision: creative planning interior"
             loading="lazy"
@@ -58,7 +58,7 @@ const VisionMissionSection = () => {
           />
 
           <img
-            className="mt-3 sm:mt-4 w-full lg:mt-10 rounded-2xl object-cover h-40 sm:h-56 lg:h-auto"
+            className="mt-3 sm:mt-4 w-full lg:mt-10 rounded-2xl object-cover h-56 lg:h-auto"
             src="https://images.unsplash.com/photo-1532455900982-24be47fa89de?q=80&w=800&auto=format&fit=crop"
             alt="Mission: event decor setup"
             loading="lazy"

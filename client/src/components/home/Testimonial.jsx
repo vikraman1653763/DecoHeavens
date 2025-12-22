@@ -63,9 +63,9 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="px-4 sm:px-20 xl:px-32 py-16 sm:py-24 overflow-hidden">
+    <section className="px-4 sm:px-20 xl:px-32 py-3 sm:py-24 overflow-hidden">
       {/* Section Heading */}
-      <div className="text-center mb-8 sm:mb-10">
+      <div className="text-center mb-1 sm:mb-10">
         <h2 className="text-primary text-3xl sm:text-[42px] font-semibold font-yatra leading-tight">
           Loved by Those We Design For
         </h2>
@@ -94,7 +94,7 @@ const TestimonialCard = ({ testimonial }) => (
   <div
     className="
       shrink-0
-      p-5 sm:p-6
+      p-3 sm:p-6
       w-64 sm:w-72
       rounded-xl bg-white/80 backdrop-blur-sm
       shadow-lg border border-secondary/40
@@ -122,7 +122,7 @@ const TestimonialCard = ({ testimonial }) => (
       ))}
     </div>
 
-    <p className="text-slate-600 text-sm my-4 sm:my-5 leading-relaxed wrap-break-word">
+    <p className="text-slate-600 text-sm my-1 sm:my-5 leading-relaxed wrap-break-word">
       “{testimonial.content}”
     </p>
 

@@ -13,7 +13,7 @@ const ContactForm = () => {
       className="
         relative overflow-hidden
         flex flex-col items-center text-sm
-        px-4 pb-14 md:pb-16
+        px-4 pb-5 md:pb-16
      
       "
     >
@@ -48,7 +48,7 @@ const ContactForm = () => {
         </p>
 
         {/* Top row: Name + Phone */}
-        <div className="flex flex-col md:flex-row items-center gap-6 w-full max-w-2xl">
+        <div className="flex flex-col md:flex-row items-center gap-3 sm:gap-6 w-full max-w-2xl">
           <div className="w-full">
             <label className="text-black/70 text-xs sm:text-sm" htmlFor="name">
               Your Name

@@ -7,7 +7,8 @@ const ContactHero = () => {
         bg-linear-to-b
         from-[#fff7f3] via-[#fffbee] to-[#e6f0ec]
         px-3 sm:px-10
-        pt-10 pb-16
+        pt-20
+        sm:pt-10 sm:pb-16 pb-5
         overflow-hidden
       "
     >
@@ -16,7 +17,7 @@ const ContactHero = () => {
         <button
           type="button"
           className="
-            mt-8 sm:mt-10 mb-6
+            mt-1 sm:mt-10 mb-6
             flex flex-wrap items-center justify-center gap-2 sm:gap-0 sm:space-x-2
             border border-primary
             text-primary
@@ -94,7 +95,8 @@ const ContactHero = () => {
         <a
           href="#form"
           className="
-            mt-8
+          mt-2
+            sm:mt-8
             bg-primary
             text-white
             px-6 pr-2.5 py-2.5
@@ -127,7 +129,7 @@ const ContactHero = () => {
         <img
           className="
             rounded-4xl
-            mt-10 sm:mt-14
+            mt-6 sm:mt-14
             h-64 sm:h-72
             w-full
             object-cover

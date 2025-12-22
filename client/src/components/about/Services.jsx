@@ -45,16 +45,16 @@ const Services = () => {
   ];
 
   return (
-    <section className="max-w-6xl mx-auto py-16 md:py-20 px-4">
+    <section className="max-w-6xl mx-auto py-8 md:py-20 px-4">
       <h2 className="text-3xl md:text-4xl text-primary text-center mb-3 font-yatra">
         Our Services
       </h2>
-      <p className="text-center text-slate-600 max-w-2xl mx-auto mb-10 md:mb-12 text-sm sm:text-base">
+      <p className="text-center text-slate-600 max-w-2xl mx-auto mb-6 md:mb-12 text-sm sm:text-base">
         From unforgettable celebrations to beautiful homes and expressive wall
         art, we bring creativity and craftsmanship to every project we take on.
       </p>
 
-      <div className="grid gap-8 sm:gap-10 md:grid-cols-3 items-stretch">
+      <div className="grid gap-8 sm:gap-10 md:grid-cols-3 items-stretch justify-center">
         {services.map((service, idx) => (
           <motion.div
             key={idx}
@@ -72,7 +72,7 @@ const Services = () => {
               className="
                 bg-white rounded-3xl shadow-md hover:shadow-xl
                 transition-all duration-300 overflow-hidden
-                flex flex-col h-full
+                flex flex-col h-full w-80 sm:w-full
               "
             >
               {/* Image */}
@@ -80,12 +80,12 @@ const Services = () => {
                 <img
                   src={service.img}
                   alt={service.title}
-                  className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full       object-cover transform hover:scale-105 transition-transform duration-500"
                 />
               </div>
 
               {/* Content */}
-              <div className="p-6 flex flex-col flex-1">
+              <div className=" px-2 py-4 sm:p-6 flex flex-col flex-1">
                 <h3 className="text-xl font-semibold text-primary mb-2 font-dance">
                   {service.title}
                 </h3>
@@ -93,10 +93,7 @@ const Services = () => {
                   {service.desc}
                 </p>
 
-                {/* CTA
-                    - Mobile: always visible + clickable
-                    - Desktop: hover-reveal (unchanged behavior)
-                */}
+              
                 <button
                   onClick={() => navigate(service.link)}
                   className="
@@ -104,10 +101,10 @@ const Services = () => {
                     px-4 py-2 rounded-full text-xs md:text-sm font-medium
                     bg-primary text-white shadow-lg
                     w-fit
-
+               
                     opacity-100 translate-y-0 pointer-events-auto
-                    md:opacity-0 md:-translate-y-3 md:pointer-events-none
-                    md:group-hover:opacity-100 md:group-hover:translate-y-0 md:group-hover:pointer-events-auto
+                   hover:-translate-y-2
+                   
                     transition-all duration-300
                   "
                 >

@@ -4,7 +4,7 @@ const ContactMapSection = () => {
   return (
     <section
       className="
-        px-4 sm:px-8 lg:px-10 pb-16
+        px-4 py-5 sm:px-8 lg:px-10 sm:pb-16
            bg-linear-to-b
         from-[#e6f0ec] via-[#fffbee] to-[#fff7f3]
       "
