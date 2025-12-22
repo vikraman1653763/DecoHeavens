@@ -9,47 +9,46 @@ import {
 import { AnimatePresence, motion } from "framer-motion";
 
 const WhyChooseUsEventsTabs = () => {
-const steps = useMemo(
-  () => [
-    {
-      label: "Planning",
-      title: "Personalized Planning",
-      desc: "We begin by understanding your vision, traditions, and expectations to design an event that truly reflects you.",
-      icon: IoHeart,
-      img: "https://images.unsplash.com/photo-1531058020387-3be344556be6?q=80&w=1200&auto=format&fit=crop",
-    },
-    {
-      label: "Design",
-      title: "Creative Design Approach",
-      desc: "Our team develops themes, layouts, and decor concepts that blend aesthetics with meaningful storytelling.",
-      icon: IoColorPalette,
-      img: "https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop",
-    },
-    {
-      label: "Coordination",
-      title: "Seamless Coordination",
-      desc: "We manage timelines, logistics, and vendors so everything runs smoothly without last-minute stress.",
-      icon: IoCalendar,
-      img: "https://images.unsplash.com/photo-1508138221679-760a23a2285b?q=80&w=1200&auto=format&fit=crop",
-    },
-    {
-      label: "Team",
-      title: "Trusted Team & Vendors",
-      desc: "With an experienced team and reliable vendor network, we ensure quality, consistency, and professionalism.",
-      icon: IoPeople,
-      img: "https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=1200&auto=format&fit=crop",
-    },
-    {
-      label: "Execution",
-      title: "Flawless Event Execution",
-      desc: "On the big day, we handle every detail behind the scenes — so you can be fully present and enjoy every moment.",
-      icon: IoSparkles,
-      img: "https://images.unsplash.com/photo-1508672019048-805c876b67e2?q=80&w=1200&auto=format&fit=crop",
-    },
-  ],
-  []
-);
-
+  const steps = useMemo(
+    () => [
+      {
+        label: "Planning",
+        title: "Personalized Planning",
+        desc: "We begin by understanding your vision, traditions, and expectations to design an event that truly reflects you.",
+        icon: IoHeart,
+        img: "https://images.unsplash.com/photo-1531058020387-3be344556be6?q=80&w=1200&auto=format&fit=crop",
+      },
+      {
+        label: "Design",
+        title: "Creative Design Approach",
+        desc: "Our team develops themes, layouts, and decor concepts that blend aesthetics with meaningful storytelling.",
+        icon: IoColorPalette,
+        img: "https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop",
+      },
+      {
+        label: "Coordination",
+        title: "Seamless Coordination",
+        desc: "We manage timelines, logistics, and vendors so everything runs smoothly without last-minute stress.",
+        icon: IoCalendar,
+        img: "https://images.unsplash.com/photo-1508138221679-760a23a2285b?q=80&w=1200&auto=format&fit=crop",
+      },
+      {
+        label: "Team",
+        title: "Trusted Team & Vendors",
+        desc: "With an experienced team and reliable vendor network, we ensure quality, consistency, and professionalism.",
+        icon: IoPeople,
+        img: "https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=1200&auto=format&fit=crop",
+      },
+      {
+        label: "Execution",
+        title: "Flawless Event Execution",
+        desc: "On the big day, we handle every detail behind the scenes — so you can be fully present and enjoy every moment.",
+        icon: IoSparkles,
+        img: "https://images.unsplash.com/photo-1508672019048-805c876b67e2?q=80&w=1200&auto=format&fit=crop",
+      },
+    ],
+    []
+  );
 
   const [active, setActive] = useState(0);
   const CurrentIcon = steps[active].icon;
@@ -163,7 +162,12 @@ const steps = useMemo(
                 alt={steps[active].title}
                 loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover object-center"
-                initial={{ opacity: 0, x: 14, scale: 0.98, filter: "blur(6px)" }}
+                initial={{
+                  opacity: 0,
+                  x: 14,
+                  scale: 0.98,
+                  filter: "blur(6px)",
+                }}
                 animate={{ opacity: 1, x: 0, scale: 1, filter: "blur(0px)" }}
                 exit={{ opacity: 0, x: -12, scale: 0.98, filter: "blur(6px)" }}
                 transition={{ type: "spring", stiffness: 220, damping: 22 }}

@@ -19,8 +19,8 @@ const EventsPlanningCTA = () => {
           </h2>
 
           <p className="mt-3 max-w-xl mx-auto text-white/85 text-sm sm:text-base leading-relaxed">
-            From weddings to cultural celebrations, we craft thoughtfully designed
-            events that reflect your story and create lasting memories.
+            From weddings to cultural celebrations, we craft thoughtfully
+            designed events that reflect your story and create lasting memories.
           </p>
 
           <div className="mt-6">

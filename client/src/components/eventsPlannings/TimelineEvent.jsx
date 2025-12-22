@@ -8,8 +8,9 @@ export default function TimelineEvent() {
       content: (
         <div>
           <p className="mb-5 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-            Engagement, haldi, sangeet, reception — we plan the full wedding flow
-            with theme styling, decor, vendor coordination, and on-day management.
+            Engagement, haldi, sangeet, reception — we plan the full wedding
+            flow with theme styling, decor, vendor coordination, and on-day
+            management.
           </p>
 
           {/* ✅ Mobile: 1 col | sm+: 2 col (desktop stays 2) */}

@@ -40,7 +40,6 @@
   transition: transform 350ms ease, box-shadow 350ms ease;
   overflow: hidden;
   z-index: 5;
- 
 }
 
 .wall-thumb:hover {
@@ -79,14 +78,12 @@
   }
 }
 
-
 .wall-thumb::after {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  box-shadow:
-    inset 0 0 0 2px rgba(255, 255, 255, 0.45),
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.45),
     inset 0 0 0 10px rgba(0, 0, 0, 0.1);
   pointer-events: none;
 }
@@ -109,7 +106,7 @@
   z-index: 9999;
   /* prevents weird highlighting */
   -webkit-tap-highlight-color: transparent;
-   overscroll-behavior: contain;
+  overscroll-behavior: contain;
 }
 
 /* Backdrop (clickable) */
@@ -134,12 +131,11 @@
   box-shadow: 0 40px 90px rgba(0, 0, 0, 0.55);
   overflow: hidden;
   z-index: 2;
-  transition:
-    left 520ms cubic-bezier(.2,.85,.2,1),
-    top 520ms cubic-bezier(.2,.85,.2,1),
-    width 520ms cubic-bezier(.2,.85,.2,1),
-    height 520ms cubic-bezier(.2,.85,.2,1),
-    border-radius 520ms cubic-bezier(.2,.85,.2,1);
+  transition: left 520ms cubic-bezier(0.2, 0.85, 0.2, 1),
+    top 520ms cubic-bezier(0.2, 0.85, 0.2, 1),
+    width 520ms cubic-bezier(0.2, 0.85, 0.2, 1),
+    height 520ms cubic-bezier(0.2, 0.85, 0.2, 1),
+    border-radius 520ms cubic-bezier(0.2, 0.85, 0.2, 1);
 }
 
 /* Open state -> fullscreen */
@@ -153,7 +149,7 @@
   width: 100vw !important;
   height: 100vh !important;
   border-radius: 0 !important;
-    overflow: auto;        
+  overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -169,8 +165,8 @@
     rgba(0, 0, 0, 0.05) 100%
   );
   pointer-events: none;
-  z-index: 4;          /* ✅ stays above bg, below content/subs */
-  opacity: 0;          /* ✅ start hidden */
+  z-index: 4; /* ✅ stays above bg, below content/subs */
+  opacity: 0; /* ✅ start hidden */
   transition: opacity 420ms ease; /* ✅ smooth on initial open */
 }
 
@@ -184,7 +180,6 @@
   opacity: 0;
 }
 
-
 /* Sub-image FLIP layer (visual only, sits above shade/bg) */
 .overlay-flip {
   position: absolute;
@@ -197,12 +192,11 @@
   /* IMPORTANT: below content/subs but above shade */
   z-index: 4;
 
-  transition:
-    left 520ms cubic-bezier(.2,.85,.2,1),
-    top 520ms cubic-bezier(.2,.85,.2,1),
-    width 520ms cubic-bezier(.2,.85,.2,1),
-    height 520ms cubic-bezier(.2,.85,.2,1),
-    border-radius 520ms cubic-bezier(.2,.85,.2,1);
+  transition: left 520ms cubic-bezier(0.2, 0.85, 0.2, 1),
+    top 520ms cubic-bezier(0.2, 0.85, 0.2, 1),
+    width 520ms cubic-bezier(0.2, 0.85, 0.2, 1),
+    height 520ms cubic-bezier(0.2, 0.85, 0.2, 1),
+    border-radius 520ms cubic-bezier(0.2, 0.85, 0.2, 1);
 }
 
 .overlay-flip.is-open {
@@ -232,7 +226,7 @@
 
 .overlay-title {
   font-size: clamp(2rem, 4vw, 4rem);
-  }
+}
 
 .overlay-desc {
   margin-top: 14px;
@@ -243,7 +237,7 @@
 .overlay-btn {
   margin-top: 18px;
   border: 0;
-  padding:3px 8px;
+  padding: 3px 8px;
   border-radius: 10px;
   cursor: pointer;
   pointer-events: auto;
@@ -333,7 +327,7 @@
 
 /* reveal */
 .overlay-root.is-open .overlay-subs.bento .overlay-sub {
-  animation: sub-reveal 650ms cubic-bezier(.2,.85,.2,1) forwards;
+  animation: sub-reveal 650ms cubic-bezier(0.2, 0.85, 0.2, 1) forwards;
 }
 
 /* hover */
@@ -345,7 +339,7 @@
 /* ✅ Bento pattern (6 items) */
 .overlay-subs.bento .overlay-sub:nth-child(1) {
   grid-column: span 3;
-  grid-row: span 3; 
+  grid-row: span 3;
 }
 
 .overlay-subs.bento .overlay-sub:nth-child(2) {
@@ -356,18 +350,17 @@
 .overlay-subs.bento .overlay-sub:nth-child(3) {
   grid-column: span 3;
   grid-row: span 2;
-
 }
 
 .overlay-subs.bento .overlay-sub:nth-child(4) {
   grid-column: span 2 !important;
-  grid-row: span 3; 
-  grid-row-start:1 !important;
+  grid-row: span 3;
+  grid-row-start: 1 !important;
   grid-column-start: 4;
 }
 
 .overlay-root.is-open .overlay-sub {
-  animation: sub-reveal 650ms cubic-bezier(.2,.85,.2,1) forwards;
+  animation: sub-reveal 650ms cubic-bezier(0.2, 0.85, 0.2, 1) forwards;
 }
 
 /* ✅ reveal animation ends with blur=0, so hover won’t look weird */
@@ -416,10 +409,9 @@
 
 /* collapse phase faster (when not open) */
 .overlay-root:not(.is-open) .overlay-card {
-  transition:
-    left 220ms cubic-bezier(.2,.85,.2,1),
-    top 220ms cubic-bezier(.2,.85,.2,1),
-    width 220ms cubic-bezier(.2,.85,.2,1),
-    height 220ms cubic-bezier(.2,.85,.2,1),
-    border-radius 220ms cubic-bezier(.2,.85,.2,1);
+  transition: left 220ms cubic-bezier(0.2, 0.85, 0.2, 1),
+    top 220ms cubic-bezier(0.2, 0.85, 0.2, 1),
+    width 220ms cubic-bezier(0.2, 0.85, 0.2, 1),
+    height 220ms cubic-bezier(0.2, 0.85, 0.2, 1),
+    border-radius 220ms cubic-bezier(0.2, 0.85, 0.2, 1);
 }
