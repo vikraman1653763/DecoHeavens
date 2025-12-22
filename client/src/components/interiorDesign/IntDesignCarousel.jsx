@@ -78,12 +78,22 @@ const panel = {
 
 const titleWrap = {
   hidden: { opacity: 0, y: -50, rotateZ: 10 },
-  show: { opacity: 1, y: 0, rotateZ: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  show: {
+    opacity: 1,
+    y: 0,
+    rotateZ: 0,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
 };
 
 const titleLine = {
   hidden: { opacity: 0, y: 30, rotate: -8 },
-  show: { opacity: 1, y: 0, rotate: -5, transition: { duration: 0.6, ease: "easeOut" } },
+  show: {
+    opacity: 1,
+    y: 0,
+    rotate: -5,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
 };
 
 /* ------------------------- Mobile: Normal Carousel ------------------------- */
@@ -131,11 +141,20 @@ const InteriorDesignCarouselMobile = ({ slides }) => {
         animate="show"
         className="relative z-10 pt-8 px-4 text-center text-white leading-[0.9]"
       >
-        <motion.span variants={titleLine} className="block font-dance text-[52px]">
+        <motion.span
+          variants={titleLine}
+          className="block font-dance text-[52px]"
+        >
           Interior
         </motion.span>
-        <motion.span variants={titleLine} transition={{ delay: 0.1 }} className="block font-dance text-[52px]">
-          <LineShadowText className="text-[#751c5d] font-dance -z-1">Desi</LineShadowText>
+        <motion.span
+          variants={titleLine}
+          transition={{ delay: 0.1 }}
+          className="block font-dance text-[52px]"
+        >
+          <LineShadowText className="text-[#751c5d] font-dance -z-1">
+            Desi
+          </LineShadowText>
           gn
         </motion.span>
       </motion.h1>

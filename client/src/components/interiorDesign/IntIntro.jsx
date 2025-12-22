@@ -20,13 +20,13 @@ const InteriorIntro = () => {
         {/* Intro Text */}
         <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
           We craft functional and aesthetically pleasing{" "}
-          <AnimatedGradientText>interiors</AnimatedGradientText> that reflect your
-          lifestyle and purpose.{" "}
+          <AnimatedGradientText>interiors</AnimatedGradientText> that reflect
+          your lifestyle and purpose.{" "}
           <Highlighter action="underline" color="#c65a2e">
             From concept to completion
           </Highlighter>
-          , our designs balance creativity, comfort, and practicality to transform
-          spaces into inspiring environments.
+          , our designs balance creativity, comfort, and practicality to
+          transform spaces into inspiring environments.
         </p>
 
         {/* Chips as Buttons (clickable + responsive) */}
@@ -83,7 +83,8 @@ const InteriorIntro = () => {
           </div>
 
           <p className="text-sm text-gray-500 mt-3 px-2">
-            Preview how we plan, visualize, and execute interiors—from 3D concept to handover.
+            Preview how we plan, visualize, and execute interiors—from 3D
+            concept to handover.
           </p>
         </div>
       </div>

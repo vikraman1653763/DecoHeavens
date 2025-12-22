@@ -54,8 +54,8 @@ const Lander = () => {
 
           <div className="flex items-center justify-center flex-col">
             <p className="font-dance text-lg sm:text-xl text-secondary backdrop-blur-md rounded-3xl text-center p-2">
-              Let us bring your vision to life with timeless beauty and unmatched
-              craftsmanship.
+              Let us bring your vision to life with timeless beauty and
+              unmatched craftsmanship.
             </p>
 
             <div className="w-full flex items-center justify-center h-16 sm:h-20 relative">

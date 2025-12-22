@@ -109,7 +109,7 @@ const WhatWeDoPillars = () => {
                 to={item.path}
                 className="mt-4 inline-flex w-fit items-center justify-center rounded-full bg-rose-200 px-5 py-2 text-sm font-medium text-black transition hover:bg-white"
               >
-                Explore 
+                Explore
               </Link>
             </div>
           </div>

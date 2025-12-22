@@ -227,7 +227,9 @@ const InteriorGallery = () => {
                   onClick={() => openModal(imageSets[0].slides, 0)}
                   role="button"
                   tabIndex={0}
-                  onKeyDown={(e) => e.key === "Enter" && openModal(imageSets[0].slides, 0)}
+                  onKeyDown={(e) =>
+                    e.key === "Enter" && openModal(imageSets[0].slides, 0)
+                  }
                 >
                   <img
                     alt={imageSets[0].cover.alt}
@@ -248,7 +250,9 @@ const InteriorGallery = () => {
                   onClick={() => openModal(imageSets[1].slides, 0)}
                   role="button"
                   tabIndex={0}
-                  onKeyDown={(e) => e.key === "Enter" && openModal(imageSets[1].slides, 0)}
+                  onKeyDown={(e) =>
+                    e.key === "Enter" && openModal(imageSets[1].slides, 0)
+                  }
                 >
                   <img
                     alt={imageSets[1].cover.alt}
@@ -269,7 +273,9 @@ const InteriorGallery = () => {
                   onClick={() => openModal(imageSets[2].slides, 0)}
                   role="button"
                   tabIndex={0}
-                  onKeyDown={(e) => e.key === "Enter" && openModal(imageSets[2].slides, 0)}
+                  onKeyDown={(e) =>
+                    e.key === "Enter" && openModal(imageSets[2].slides, 0)
+                  }
                 >
                   <img
                     alt={imageSets[2].cover.alt}
@@ -293,7 +299,9 @@ const InteriorGallery = () => {
                   onClick={() => openModal(imageSets[3].slides, 0)}
                   role="button"
                   tabIndex={0}
-                  onKeyDown={(e) => e.key === "Enter" && openModal(imageSets[3].slides, 0)}
+                  onKeyDown={(e) =>
+                    e.key === "Enter" && openModal(imageSets[3].slides, 0)
+                  }
                 >
                   <img
                     alt={imageSets[3].cover.alt}
@@ -314,7 +322,9 @@ const InteriorGallery = () => {
                   onClick={() => openModal(imageSets[4].slides, 0)}
                   role="button"
                   tabIndex={0}
-                  onKeyDown={(e) => e.key === "Enter" && openModal(imageSets[4].slides, 0)}
+                  onKeyDown={(e) =>
+                    e.key === "Enter" && openModal(imageSets[4].slides, 0)
+                  }
                 >
                   <img
                     alt={imageSets[4].cover.alt}
@@ -335,7 +345,9 @@ const InteriorGallery = () => {
                   onClick={() => openModal(imageSets[5].slides, 0)}
                   role="button"
                   tabIndex={0}
-                  onKeyDown={(e) => e.key === "Enter" && openModal(imageSets[5].slides, 0)}
+                  onKeyDown={(e) =>
+                    e.key === "Enter" && openModal(imageSets[5].slides, 0)
+                  }
                 >
                   <img
                     alt={imageSets[5].cover.alt}

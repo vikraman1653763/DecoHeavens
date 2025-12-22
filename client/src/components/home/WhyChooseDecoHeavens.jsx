@@ -56,8 +56,6 @@ const WhyChooseDecoHeavens = () => {
             />
           </div>
 
-      
-
           {/* Desktop: floating small image (unchanged) */}
           <div className="block absolute -bottom-10 sm:-bottom-6 right-0 sm:-right-6 w-20 sm:w-40  rounded-2xl overflow-hidden shadow-lg border border-primary/40 bg-white">
             <img

@@ -1,6 +1,9 @@
-import React, { useState } from "react"
-import { ScrollVelocityContainer, ScrollVelocityRow } from "../ui/scroll-based-velocity"
-import ServicesSection from "./ServicesSection"
+import React, { useState } from "react";
+import {
+  ScrollVelocityContainer,
+  ScrollVelocityRow,
+} from "../ui/scroll-based-velocity";
+import ServicesSection from "./ServicesSection";
 
 const IMAGES_ROW_A = [
   "https://images.unsplash.com/photo-1616047006789-b7af5afb8c20?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0",
@@ -9,7 +12,7 @@ const IMAGES_ROW_A = [
   "https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0",
   "https://images.unsplash.com/photo-1644096922601-80aa39eff1d6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0",
   "https://images.unsplash.com/photo-1505624198937-c704aff72608?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0",
-]
+];
 
 const IMAGES_ROW_B = [
   "https://images.pexels.com/photos/1648768/pexels-photo-1648768.jpeg",
@@ -22,10 +25,10 @@ const IMAGES_ROW_B = [
   "https://images.unsplash.com/photo-1600214859516-98999dba7cf1?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0",
   "https://images.unsplash.com/photo-1691751941020-5f0bced88ae7?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0",
   "https://plus.unsplash.com/premium_photo-1685152204789-1e3584d48d61?q=80&w=747&auto=format&fit=crop&ixlib=rb-4.1.0",
-]
+];
 
 const ScrollVelocityInteriorShowcase = () => {
-  const [paused, setPaused] = useState(false)
+  const [paused, setPaused] = useState(false);
 
   return (
     <section className="relative w-full overflow-hidden font-poppins py-0 sm:py-10">
@@ -62,7 +65,7 @@ const ScrollVelocityInteriorShowcase = () => {
 
           {/* Row B (pause on hover) */}
           <div className={paused ? "**:animate-none!" : ""}>
-            <ScrollVelocityRow baseVelocity={6} direction={-1}  className="py-4">
+            <ScrollVelocityRow baseVelocity={6} direction={-1} className="py-4">
               {IMAGES_ROW_B.map((src, idx) => (
                 <img
                   key={`rowB-${idx}`}
@@ -80,10 +83,9 @@ const ScrollVelocityInteriorShowcase = () => {
             </ScrollVelocityRow>
           </div>
         </ScrollVelocityContainer>
-
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ScrollVelocityInteriorShowcase
+export default ScrollVelocityInteriorShowcase;

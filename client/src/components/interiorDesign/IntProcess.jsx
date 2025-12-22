@@ -156,13 +156,13 @@ const InteriorProcess = () => {
       viewport={{ once: true, amount: 0.2 }}
     >
       <div className="container px-5 py-6 sm:py-10 mx-auto flex flex-wrap">
-          <div className="max-w-3xl mx-auto text-center mb-4">
+        <div className="max-w-3xl mx-auto text-center mb-4">
           <h2 className="text-3xl sm:text-4xl font-dance text-gray-900">
             Our Design & Execution Process
           </h2>
           <p className="mt-4 text-gray-600 text-sm sm:text-lg leading-relaxed">
-            A clear, transparent, and well-structured approach — guiding your space
-            from initial idea to final handover with precision and care.
+            A clear, transparent, and well-structured approach — guiding your
+            space from initial idea to final handover with precision and care.
           </p>
         </div>
 
@@ -320,7 +320,10 @@ const InteriorProcess = () => {
               />
 
               {/* Label overlay */}
-              <motion.div className="absolute left-4 bottom-4" variants={fadeUp}>
+              <motion.div
+                className="absolute left-4 bottom-4"
+                variants={fadeUp}
+              >
                 <motion.div
                   className="bg-white/90 backdrop-blur px-4 py-3 rounded-xl border border-secondary/40"
                   variants={fadeUp}
@@ -331,7 +334,10 @@ const InteriorProcess = () => {
                   >
                     {activeStep.label}
                   </motion.p>
-                  <motion.p variants={textV} className="font-yatra text-lg text-primary">
+                  <motion.p
+                    variants={textV}
+                    className="font-yatra text-lg text-primary"
+                  >
                     {activeStep.title}
                   </motion.p>
                 </motion.div>

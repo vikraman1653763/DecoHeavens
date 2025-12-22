@@ -62,10 +62,7 @@ const TrandingSlider = ({ slides = [], initialSlide = 0 }) => {
             }}
           >
             {slides.map((img, idx) => (
-              <SwiperSlide
-                key={idx}
-                className="w-60! sm:w-[320px]! md:w-auto!"
-              >
+              <SwiperSlide key={idx} className="w-60! sm:w-[320px]! md:w-auto!">
                 <div className="overflow-hidden rounded-4xl shadow-md">
                   <div className="h-80 w-60 sm:h-[420px] sm:w-[320px] md:h-138 md:w-138">
                     <img
@@ -82,7 +79,9 @@ const TrandingSlider = ({ slides = [], initialSlide = 0 }) => {
           </Swiper>
 
           {/* Pagination */}
-          <div className={`${navId}-pagination mx-auto mt-2 w-70 text-center`} />
+          <div
+            className={`${navId}-pagination mx-auto mt-2 w-70 text-center`}
+          />
 
           <style>{`
             .${navId}-pagination .swiper-pagination-bullet {

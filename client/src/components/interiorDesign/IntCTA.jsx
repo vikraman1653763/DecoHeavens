@@ -1,10 +1,10 @@
-import React from "react"
-import { motion } from "framer-motion"
-import { useNavigate } from "react-router-dom"
+import React from "react";
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const InteriorCTA = () => {
-  const navigate = useNavigate()
-  const goContact = () => navigate("/contact")
+  const navigate = useNavigate();
+  const goContact = () => navigate("/contact");
 
   const container = {
     hidden: { opacity: 0 },
@@ -12,17 +12,17 @@ const InteriorCTA = () => {
       opacity: 1,
       transition: { staggerChildren: 0.12, delayChildren: 0.08 },
     },
-  }
+  };
 
   const fadeUp = {
     hidden: { opacity: 0, y: 18, scale: 0.98 },
     show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.55 } },
-  }
+  };
 
   const fadeIn = {
     hidden: { opacity: 0, scale: 0.98 },
     show: { opacity: 1, scale: 1, transition: { duration: 0.6 } },
-  }
+  };
 
   return (
     <motion.section
@@ -158,7 +158,7 @@ const InteriorCTA = () => {
         </motion.div>
       </div>
     </motion.section>
-  )
-}
+  );
+};
 
-export default InteriorCTA
+export default InteriorCTA;
