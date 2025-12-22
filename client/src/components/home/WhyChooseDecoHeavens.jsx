@@ -23,7 +23,7 @@ const WhyChooseDecoHeavens = () => {
   ];
 
   return (
-    <section className="px-4 sm:px-20 xl:px-32 py-16 md:py-20 relative overflow-hidden">
+    <section className="px-4 sm:px-20 xl:px-32 py-6 md:py-20 relative overflow-hidden">
       {/* Background design (safe on mobile) */}
       <div className="absolute left-1/2 top-3/4 -translate-x-1/2 -translate-y-1/2 flex flex-row opacity-20 pointer-events-none select-none">
         <img
@@ -52,30 +52,20 @@ const WhyChooseDecoHeavens = () => {
             <img
               src="/assets/col.png"
               alt="Beautifully decorated event by Deco Heavens"
-              className="w-full h-72 sm:h-80 md:h-88 object-cover"
+              className="w-full h-35 sm:h-80 md:h-88 sm:object-cover"
             />
           </div>
 
-          {/* Mobile: show the small image as a normal card */}
-          <div className="mt-4 md:hidden w-full rounded-2xl overflow-hidden shadow-lg border border-primary/40 bg-white">
-            <img
-              src="/assets/id4.webp"
-              alt="Mural & decor detail"
-              className="w-full h-40 object-cover"
-            />
-            <div className="px-3 py-2 text-xs text-slate-600">
-              Every corner styled with meaning, not just aesthetics.
-            </div>
-          </div>
+      
 
           {/* Desktop: floating small image (unchanged) */}
-          <div className="hidden md:block absolute -bottom-6 -right-6 w-40 rounded-2xl overflow-hidden shadow-lg border border-primary/40 bg-white">
+          <div className="block absolute -bottom-10 sm:-bottom-6 right-0 sm:-right-6 w-20 sm:w-40  rounded-2xl overflow-hidden shadow-lg border border-primary/40 bg-white">
             <img
               src="/assets/id4.webp"
               alt="Mural & decor detail"
-              className="w-full h-32 object-cover"
+              className="w-full h-15 sm:h-32 object-cover"
             />
-            <div className="px-3 py-2 text-xs text-slate-600">
+            <div className="p-1 sm:px-3 sm:py-2 text-[7px] sm:text-xs text-slate-600">
               Every corner styled with meaning, not just aesthetics.
             </div>
           </div>
@@ -83,7 +73,7 @@ const WhyChooseDecoHeavens = () => {
 
         {/* Right Section */}
         <div className="text-center md:text-left">
-          <h2 className="font-yatra text-3xl md:text-4xl text-primary leading-snug">
+          <h2 className="font-yatra text-2xl md:text-4xl text-primary leading-snug">
             Why Choose{" "}
             <AnimatedGradientText
               speed={1}
@@ -95,7 +85,7 @@ const WhyChooseDecoHeavens = () => {
             </AnimatedGradientText>
           </h2>
 
-          <p className="text-slate-600 mt-3 max-w-full">
+          <p className="text-slate-600 mt-3 max-w-full text-justify sm:text-left">
             Because your story deserves more than generic decor. We blend
             tradition, artistry, and thoughtful design to create spaces and
             moments that feel deeply personal and unforgettable.

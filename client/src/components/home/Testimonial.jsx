@@ -122,7 +122,7 @@ const TestimonialCard = ({ testimonial }) => (
       ))}
     </div>
 
-    <p className="text-slate-600 text-sm my-4 sm:my-5 leading-relaxed break-words">
+    <p className="text-slate-600 text-sm my-4 sm:my-5 leading-relaxed wrap-break-word">
       “{testimonial.content}”
     </p>
 

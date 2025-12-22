@@ -126,7 +126,7 @@ const ContactHero = () => {
         {/* Hero image */}
         <img
           className="
-            rounded-[32px]
+            rounded-4xl
             mt-10 sm:mt-14
             h-64 sm:h-72
             w-full

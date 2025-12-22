@@ -75,7 +75,7 @@ const ContactInfoSection = () => {
             {item.link ? (
               <a
               href={item.link}
-              className="text-primary font-semibold hover:underline break-words"
+              className="text-primary font-semibold hover:underline wrap-break-word"
               >
                 {item.value}
               </a>

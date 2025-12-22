@@ -40,7 +40,7 @@ const WhatWeDoPillars = () => {
   ];
 
   return (
-    <section className="w-full my-10 px-4 md:px-0">
+    <section className="w-full my-6 sm:my-10 px-4 md:px-0">
       {/* Heading */}
       <h1 className="text-3xl sm:text-4xl text-primary font-yatra font-semibold text-center mx-auto">
         What We Do
@@ -53,7 +53,7 @@ const WhatWeDoPillars = () => {
       {/* Cards */}
       <div
         className="
-          mt-8 md:mt-12 mx-auto w-full max-w-5xl
+          mt-4 md:mt-12 mx-auto w-full max-w-5xl
           flex gap-4 md:gap-6
           md:items-center
           md:h-[420px]
@@ -67,9 +67,9 @@ const WhatWeDoPillars = () => {
             key={i}
             className="
               relative group
-              flex-shrink-0 md:flex-shrink
-              w-[85%] sm:w-[70%] md:w-56
-              h-[360px] sm:h-[400px] md:h-[420px]
+              shrink-0 md:shrink
+              w-[75%] sm:w-[70%] md:w-56
+              h-[260px] sm:h-[400px] md:h-[420px]
               rounded-3xl overflow-hidden
               snap-center
               md:grow md:transition-all md:duration-500 md:hover:w-full
@@ -97,7 +97,7 @@ const WhatWeDoPillars = () => {
 
               <ul className="text-sm mt-2 space-y-1">
                 {item.bullets.map((b, idx) => (
-                  <li key={idx} className="flex items-center gap-1">
+                  <li key={idx} className="flex items-center gap-1 text-nowrap">
                     <IoHeartSharp color="pink" />
                     {b}
                   </li>
@@ -109,7 +109,7 @@ const WhatWeDoPillars = () => {
                 to={item.path}
                 className="mt-4 inline-flex w-fit items-center justify-center rounded-full bg-rose-200 px-5 py-2 text-sm font-medium text-black transition hover:bg-white"
               >
-                Explore {item.title}
+                Explore 
               </Link>
             </div>
           </div>

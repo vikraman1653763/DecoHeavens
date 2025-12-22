@@ -9,7 +9,7 @@ const AboutUs = () => {
       {/* Left Image Section */}
       <div className="relative shadow-2xl shadow-primary/10 rounded-2xl shrink-0 w-full md:w-auto">
         <img
-          className="w-full max-w-md h-80 sm:h-96 md:h-130 object-contain rounded-2xl mx-auto"
+          className=" w-70 sm:w-full max-w-md h-80 sm:h-96 md:h-130 object-cover sm:object-contain rounded-2xl mx-auto border"
           src="/assets/wa6.webp"
           alt="Deco Heavens"
         />
@@ -26,17 +26,17 @@ const AboutUs = () => {
         >
           <div className="flex -space-x-4 shrink-0">
             <img
-              src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200"
+              src="https://images.unsplash.com/photo-1622782262026-6a327a45014f?q=80&w=200"
               alt="client"
               className="size-9 rounded-full border-[3px] border-white hover:-translate-y-1 transition z-1"
             />
             <img
-              src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200"
+              src="https://images.unsplash.com/photo-1729157661483-ed21901ed892?q=80&w=200"
               alt="client"
               className="size-9 rounded-full border-[3px] border-white hover:-translate-y-1 transition z-2"
             />
             <img
-              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&h=200&auto=format&fit=crop"
+              src="https://images.unsplash.com/photo-1618245472177-2a74ad3b994a?q=80&w=200&h=200&auto=format&fit=crop"
               alt="client"
               className="size-9 rounded-full border-[3px] border-white hover:-translate-y-1 transition z-3"
             />
@@ -72,31 +72,31 @@ const AboutUs = () => {
         </p>
 
         {/* Three Short Key Points */}
-        <ul className="mt-6 space-y-3">
-          <li className="flex items-start gap-2 justify-center md:justify-start">
+        <ul className=" mt-4 sm:mt-6 flex flex-col justify-center items-start space-y-3">
+          <li className="flex items-start gap-2 justify-start">
             <span className="text-primary text-lg mt-0.5">
               <GiTwirlyFlower />
             </span>
             <span>Bespoke designs crafted with detail and emotion.</span>
           </li>
 
-          <li className="flex items-start gap-2 justify-center md:justify-start">
+          <li className="flex items-start gap-2 justify-start">
             <span className="text-primary text-lg mt-0.5">
               <GiTwirlyFlower />
             </span>
-            <span>Seamless execution with premium materials & concepts.</span>
+            <span className="text-left">Seamless execution with premium materials & concepts.</span>
           </li>
 
-          <li className="flex items-start gap-2 justify-center md:justify-start">
+          <li className="flex items-start gap-2 justify-start">
             <span className="text-primary text-lg mt-0.5">
               <GiTwirlyFlower />
             </span>
-            <span>Personalized experiences for weddings, homes & wall art.</span>
+            <span className="text-left">Personalized experiences for weddings, homes & wall art.</span>
           </li>
         </ul>
 
         <div className="flex justify-center md:justify-start">
-          <button className="flex items-center gap-2 mt-8 hover:-translate-y-0.5 transition bg-primary py-3 px-8 rounded-full text-white">
+          <button className="flex items-center gap-2 sm:mt-8 hover:-translate-y-0.5 transition bg-primary py-3 px-8 rounded-full text-white">
             <span>Read more</span>
             <BsArrowRight size={16} />
           </button>
