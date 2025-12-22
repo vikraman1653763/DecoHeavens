@@ -16,7 +16,7 @@ const WallArtCTASection = () => {
               src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80"
               alt="Wall art mural"
               className="
-                w-full h-[220px] sm:h-[320px] md:h-full
+                w-full h-[220px] sm:h-80 md:h-full
                 object-cover
               "
             />

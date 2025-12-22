@@ -78,7 +78,7 @@ const InteriorDesignCarousel = () => {
             style={{ backgroundImage: `url(${slides[active]?.img})` }}
           />
           <div className="absolute inset-0 bg-black/55" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70" />
+          <div className="absolute inset-0 bg-linear-to-b from-black/40 via-transparent to-black/70" />
         </motion.div>
       </AnimatePresence>
 

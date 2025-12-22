@@ -155,7 +155,7 @@ const steps = useMemo(
 
         {/* Image */}
         <div className="w-full flex justify-center mb-8 md:mb-10">
-          <div className="relative w-full max-w-md sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 aspect-[6/5] overflow-hidden rounded-2xl">
+          <div className="relative w-full max-w-md sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 aspect-6/5 overflow-hidden rounded-2xl">
             <AnimatePresence mode="wait" initial={false}>
               <motion.img
                 key={steps[active].img}

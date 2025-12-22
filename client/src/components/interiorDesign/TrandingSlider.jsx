@@ -64,10 +64,10 @@ const TrandingSlider = ({ slides = [], initialSlide = 0 }) => {
             {slides.map((img, idx) => (
               <SwiperSlide
                 key={idx}
-                className="!w-[240px] sm:!w-[320px] md:!w-auto"
+                className="w-60! sm:w-[320px]! md:w-auto!"
               >
                 <div className="overflow-hidden rounded-4xl shadow-md">
-                  <div className="h-[320px] w-[240px] sm:h-[420px] sm:w-[320px] md:h-138 md:w-138">
+                  <div className="h-80 w-60 sm:h-[420px] sm:w-[320px] md:h-138 md:w-138">
                     <img
                       src={img}
                       alt={`Slide ${idx + 1}`}

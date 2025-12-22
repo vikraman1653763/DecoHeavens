@@ -18,7 +18,7 @@ export default function Footer() {
               <img
                 src="/assets/logo.svg"
                 alt="Deco Heavens Logo"
-                className="w-20 opacity-90 mx-auto sm:mx-0"
+                className="w-20 sm:w-40 opacity-90 mx-auto sm:mx-0"
               />
             </a>
 

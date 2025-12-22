@@ -148,7 +148,7 @@ const InteriorDesignCarouselMobile = ({ slides }) => {
               key={current.img}
               src={current.img}
               alt={current.title}
-              className="w-full h-[320px] object-cover"
+              className="w-full h-80 object-cover"
               initial={{ opacity: 0, x: 18, filter: "blur(8px)" }}
               animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
               exit={{ opacity: 0, x: -18, filter: "blur(8px)" }}

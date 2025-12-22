@@ -366,7 +366,7 @@ const CarouselSliderMobile = () => {
       <AnimatePresence>
         {overlay && (
           <motion.div
-            className="fixed inset-0 z-[9999]"
+            className="fixed inset-0 z-9999"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -383,7 +383,7 @@ const CarouselSliderMobile = () => {
             <div
               className={[
                 "absolute rounded-3xl overflow-hidden shadow-2xl",
-                "transition-[left,top,width,height,transform] duration-[520ms] ease-[cubic-bezier(.22,1,.36,1)]",
+                "transition-[left,top,width,height,transform] duration-520 ease-[cubic-bezier(.22,1,.36,1)]",
                 overlay.phase === "to" ? "scale-100" : "scale-100",
               ].join(" ")}
               style={{
@@ -403,7 +403,7 @@ const CarouselSliderMobile = () => {
                   key={overlay.flip.id}
                   className={[
                     "absolute rounded-2xl overflow-hidden",
-                    "transition-[left,top,width,height,transform,opacity] duration-[520ms] ease-[cubic-bezier(.22,1,.36,1)]",
+                    "transition-[left,top,width,height,transform,opacity] duration-520 ease-[cubic-bezier(.22,1,.36,1)]",
                     overlay.flip.phase === "to" ? "opacity-100" : "opacity-100",
                   ].join(" ")}
                   style={{

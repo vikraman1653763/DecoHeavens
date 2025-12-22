@@ -301,7 +301,7 @@ const InteriorProcess = () => {
 
           {/* ✅ Right: Image changes with step */}
           <motion.div
-            className="w-full lg:w-3/5 md:w-1/2 md:mt-0 mt-8 md:mt-12"
+            className="w-full lg:w-3/5 md:w-1/2 md:mt-0 mt-8"
             variants={fadeUp}
           >
             <motion.div
@@ -313,7 +313,7 @@ const InteriorProcess = () => {
                 variants={imageV}
                 initial="hidden"
                 animate="show"
-                className="w-full h-[320px] sm:h-[380px] md:h-[520px] object-cover object-center"
+                className="w-full h-80 sm:h-[380px] md:h-[520px] object-cover object-center"
                 src={activeStep.image}
                 alt={activeStep.title}
                 loading="lazy"
