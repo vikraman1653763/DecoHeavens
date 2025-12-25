@@ -186,7 +186,7 @@ const WallArtBentoGrid = () => {
   const [activeTile, setActiveTile] = useState(null);
 
   return (
-    <section className="w-full sm:py-20 relative">
+    <section className="w-full sm:py-20 relative overflow-hidden">
       {/* Decorative svgs (optional) */}
       <img
         src="/assets/design06.svg"

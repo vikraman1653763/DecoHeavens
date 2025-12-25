@@ -84,13 +84,25 @@ export default function Footer() {
             </p>
           </div>
         </div>
-
+        <div className="border-t py-6 gap-3 sm:gap-0 border-slate-200 flex flex-col sm:flex-row w-full sm:w-3/4 mx-auto justify-around items-center ">
         {/* COPYRIGHT */}
-        <p className="py-4 text-center border-t mt-6 border-slate-200">
+        <p className=" text-center  ">
           Copyright © {new Date().getFullYear()}
           <span className="text-primary font-medium"> Deco Heavens</span> — All
           Rights Reserved.
         </p>
+        <p className=" text-center text-sm ">
+          Designed & Developed by{" "}
+          <a
+            href="https://vikramang.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary font-medium hover:underline"
+          >
+            Vikraman G
+          </a>
+        </p>
+        </div>
       </footer>
     </>
   );

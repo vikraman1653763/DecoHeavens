@@ -8,7 +8,7 @@ import React from 'react'
 
 const EventsAndWeddings = () => {
   return (
-    <div>
+    <div className=' overflow-hidden'>
       <EventImageSlider/>
       <EventStats/>
       <TimelineEvent/>
