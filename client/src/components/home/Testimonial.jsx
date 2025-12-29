@@ -141,5 +141,4 @@ const TestimonialCard = ({ testimonial }) => (
     </div>
   </div>
 );
-
 export default Testimonials;
